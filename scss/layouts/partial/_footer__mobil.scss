@@ -1,0 +1,30 @@
+// >> Base Footer Style --- >
+
+.mobilFooter{
+    @include flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    // mobilFooter__item
+    %mobilFooter__item{
+        @include flex(center, center);
+        @include flexWidth();
+        height: 36px;
+        border-bottom: 1px solid w(0.1);
+        color: white;
+        text-align: center;
+    }
+    @include e(item){
+        @extend %mobilFooter__item;
+        @include m(jumpTo){
+            @extend %mobilFooter__item;
+            svg{
+                width: 28px;
+                height: auto;
+                fill: w();
+            }
+        }
+    }
+    @include mq($ipad-land){
+        display: none;
+    }
+}

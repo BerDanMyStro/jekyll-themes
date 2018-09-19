@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext");
+body { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: baseline; flex-direction: column; }
+body .stickyWrapper { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: baseline; flex: 1 1 auto; flex-flow: column wrap; width: 100%; min-height: 100vh; margin: 0; padding: 0; }
+body .stickyWrapper .pageWrapper { flex: 1 1 auto; width: 100%; }
+
+* { position: relative; box-sizing: border-box; -moz-box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, img, ins, kbd, q, s, samp, small, strike, sub, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font-style: inherit; line-height: 1; vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section { display: block; }
+
+ol, ul { list-style: none; margin: 0; padding: 0; }
+
+blockquote, q { quotes: none; padding-left: 1em; font-size: 1.125rem; font-style: italic; line-height: 1.43; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+code { font-family: monospace; }
+
+b, strong { font-weight: bold; }
+
+.clear { clear: both; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; }
+
+.clearfix:after { clear: both; content: ' '; display: block; font-size: 0; line-height: 0; visibility: hidden; width: 0; height: 0; }
+
+img { display: block; width: 100%; margin: 0; padding: 0; border: none; outline: none; }
+
+a { outline: none; text-decoration: none; }
+
+h2, h3, h4, h5, h6 { margin-bottom: 1em; line-height: 1.2; }
+
+h3 { font-size: 1.75rem; }
+
+h4 { font-size: 1.5rem; }
+
+h5 { font-size: 1.25rem; }
+
+h6 { font-size: 1rem; }
+
+h2.pageTitle, h2.pageTitle--grouped { font-size: 2em; font-weight: 300; }
+
+h2.pageTitle--grouped { margin-bottom: 0; }
+
+h3.pageSubtitle { font-weight: 300; }
+h3.pageSubtitle--grouped { font-weight: 300; font-size: 1em; }
+
+.statText * { line-height: 1.5; }
+.statText h3, .statText h4, .statText h5, .statText h6 { font-weight: 300; line-height: 1.2; }
+.statText p { margin-bottom: 1em; }
+.statText ul { padding-left: 24px; list-style-type: decimal; }
+.statText ul li { margin-bottom: 1em; }
+.statText a { color: #4aa3df; }
+.statText code { padding: 0.25rem 0.5rem; border-radius: 3px; background: rgba(0, 0, 0, 0.75); color: white; }
+
+header { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; width: 100%; }
+
+.headerWrapper { width: 90%; max-width: 1200px; flex-basis: 90%; }
+
+.heade__seoWrapper { position: absolute; width: 1px; height: 1px; overflow: hidden; text-indent: 100%; white-space: nowrap; }
+
+.mobilFooter { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: baseline; flex-direction: column; margin-bottom: 24px; }
+.mobilFooter .mobilFooter__item, .mobilFooter .mobilFooter__item--jumpTo { display: -ms-flexbox; display: flex; justify-content: center; align-items: center; width: 100%; max-width: 100%; flex-basis: 100%; height: 36px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: white; text-align: center; }
+.mobilFooter__item--jumpTo svg { width: 28px; height: auto; fill: white; }
+@media only screen and (min-width: 1024px) { .mobilFooter { display: none; } }
+
+footer { width: 100%; background: #2c3e50; padding: 0 0 24px 0; }
+@media only screen and (min-width: 1024px) { footer { padding: 24px 0; } }
+
+body { background: url(../images/skulls.png); font-family: 'Poppins', sans-serif; }
+
+.pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; width: 100%; padding: 0 0 60px 0; }
+
+.contentWrapper { width: 90%; max-width: 1200px; flex-basis: 90%; }
+
+nav { display: -ms-flexbox; display: flex; justify-content: flex-end; align-items: baseline; width: 100%; padding: 8px 0; }
+
+.btn--toggleMenu { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: none; outline: none; cursor: pointer; width: 40px; height: 38px; border-radius: 3px; border-bottom: 2px solid #2c3e50; background: #34495e; }
+.btn--toggleMenu svg { width: 18px; height: auto; fill: white; margin-top: 5px; }
+
+.toggleMenu { display: none; position: absolute; top: 56px; right: 0; width: 180px; background: white; z-index: 1000; }
+.toggleMenu .toggleMenu__item a, .toggleMenu__item .toggleMenu a, .toggleMenu .toggleMenu__item--active a, .toggleMenu__item--active .toggleMenu a { display: block; padding: 10px 8px; }
+.toggleMenu__item a { color: gray; }
+.toggleMenu__item--active { background: #34495e; }
+.toggleMenu__item--active a { color: white; }
+
+.madeBy { width: 100%; color: white; font-size: 0.6875rem; text-align: center; }
+
+/*# sourceMappingURL=style.css.map */

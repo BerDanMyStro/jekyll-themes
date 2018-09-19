@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,">
+		<title>{{page.title}}</title>
+		<meta name="description" content="Description">
+		<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/style.css">
+		<!--JS import-->
+		<script src="{{site.baseurl}}/js/jquery-3.3.1.min.js"></script>
+		<script src="{{site.baseurl}}/js/public.js"></script>
+		<!-- RealFavicon -->
+		<!-- Open Graph Protocol -->
+    	<!-- Dublin Core -->
+    	<!-- Analytics -->
+	</head>
+	<body>
+        <div id="jumpHere" class="stickyWrapper">
+            <header>
+            	<div class="headerWrapper">
+            		<a href="index.html" class="header__logo">
+            			{% include header__seoWrapper.html %}
+            		</a>
+            		{% include nav.html %}
+            	</div>
+            </header>
+            {{content}}
+			<footer>
+				{% include footer__mobil.html %}
+				{% include footer__madeBy.html %}
+			</footer>
+        </div>
+    </body>
+</html>

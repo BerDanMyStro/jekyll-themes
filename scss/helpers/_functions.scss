@@ -1,0 +1,20 @@
+// >> Functions --- >
+
+// rem function
+$fontSize: 16px;
+@function rem($target, $context: $fontSize){
+    @return ($target / $context) * 1rem;
+}
+
+// RGBA Colors
+@function b($opacity: 1){
+    @return rgba(black, $opacity);
+}
+
+@function w($opacity: 1){
+    @return rgba(white, $opacity);
+}
+
+@function c($color, $opacity: 1){
+    @return rgba($color, $opacity);
+}

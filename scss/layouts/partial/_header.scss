@@ -1,0 +1,15 @@
+// >> Base Header Style --- >
+
+header{
+    @include flex(center, baseline);
+    width: 100%;
+}
+.headerWrapper{
+    width: 90%;
+    max-width:1200px;
+    flex-basis: 90%;
+}
+.heade__seoWrapper{
+    @include hiddenText;
+
+}

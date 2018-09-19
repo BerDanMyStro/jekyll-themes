@@ -1,0 +1,40 @@
+// >> headlines Style --- >
+
+h2, h3, h4, h5, h6{
+    margin-bottom: 1em;
+    line-height: 1.2;
+}
+h3{
+    font-size: 1.75rem;
+}
+h4{
+    font-size: 1.5rem;
+}
+h5{
+    font-size: 1.25rem;
+}
+h6{
+    font-size: 1rem;
+}
+
+// Project spec. headlines
+
+// Page pageTitle
+%pageTitle{
+    font-size: 2em;
+    font-weight: 300;
+}
+h2.pageTitle{
+    @extend %pageTitle;
+    @include m(grouped){
+        @extend %pageTitle;
+        margin-bottom: 0;
+    }
+}
+h3.pageSubtitle{
+    font-weight: 300;
+    @include m(grouped){
+        font-weight: 300;
+        font-size: 1em;
+    }
+}

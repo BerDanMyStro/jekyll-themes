@@ -1,0 +1,76 @@
+// >> Mixins --- >
+
+// BEM Mixins
+@mixin e($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+@mixin m($modifire) {
+    &--#{$modifire} {
+        @content;
+    }
+}
+
+// Media Queries
+@mixin mq($break){
+    @media only screen and (min-width: $break) {
+        @content;
+    }
+}
+
+// Apparens None - browser fix
+@mixin appearencNone{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+
+// Reset Mixins
+@mixin base-button{
+    @include appearencNone;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+// Select Disable
+@mixin selectDisable{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+}
+
+// Display Mixins
+@mixin flex($justify: flex-start, $align: baseline){
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin grid($justify: start, $align: start){
+    display: -ms-grid;
+    display: grid;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// Flex width
+@mixin flexWidth($width: 100%, $maxWidth: $width){
+    width: $width;
+    max-width: $maxWidth;
+    flex-basis: $width;
+}
+
+// Hidden Text
+@mixin hiddenText{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}

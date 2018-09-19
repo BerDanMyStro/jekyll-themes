@@ -1,0 +1,23 @@
+// >> Base Layout --- >
+@import "./partial/header";
+@import "./partial/footer";
+
+body{
+    @extend %stickyFooter;
+    background: url(../images/skulls.png);
+    font-family: #{$base-fontFamily};
+}
+.pageWrapper{
+    @include flex(center, baseline);
+    width: 100%;
+    padding: 0 0 60px 0;
+}
+.contentWrapper{
+    width: 90%;
+    max-width: $contentWidth;
+    flex-basis: 90%;
+    //background: c(red, 0.25);
+}
+.statText{
+    @extend %statText;
+}

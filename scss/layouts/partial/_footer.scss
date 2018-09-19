@@ -1,0 +1,12 @@
+// >> Base Footer Style --- >
+
+@import "footer__mobil";
+
+footer{
+    width: 100%;
+    background: $flat-color_10;
+    padding: 0 0 24px 0;
+    @include mq($ipad-land){
+        padding: 24px 0;
+    }
+}

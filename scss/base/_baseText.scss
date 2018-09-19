@@ -1,0 +1,29 @@
+%statText{
+    //line-height: 1.42857143;
+    *{
+        line-height: 1.5;
+    }
+    h3, h4, h5, h6{
+        font-weight: 300;
+        line-height: 1.2;
+    }
+    p{
+        margin-bottom: 1em;
+    }
+    ul{
+        padding-left: 24px;
+        list-style-type: decimal;
+        li{
+            margin-bottom: 1em;
+        }
+    }
+    a{
+        color: $base-linkColor;
+    }
+    code{
+        padding: rem(4px) rem(8px);
+        border-radius: $base-radius;
+        background: b(0.75);
+        color: w();
+    }
+}

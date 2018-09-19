@@ -1,0 +1,20 @@
+// >> Functions --- >
+
+// Sticky Footer whit FlexBox
+%stickyFooter{
+    @include flex;
+    flex-direction: column;
+    .stickyWrapper{
+        @include flex;
+        flex: 1 1 auto;
+        flex-flow: column wrap;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+    .pageWrapper{
+        flex: 1 1 auto;
+        width: 100%;
+    }
+  }
+}
