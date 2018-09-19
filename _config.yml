@@ -1,0 +1,3 @@
+markdown: redcarpet
+baseurl: /jekyll-themes
+exclude: ['README.md', '.idea', '.sass-cache']
