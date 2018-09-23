@@ -39,10 +39,12 @@ h6 { font-size: 1rem; }
 
 h2.pageTitle, h2.pageTitle--grouped { font-size: 2em; font-weight: 300; }
 
+h2.pageTitle:after, h3.pageSubtitle:after, h3.pageSubtitle--grouped:after { display: block; position: absolute; bottom: -8px; left: 0; right: 0; width: 150px; height: 2px; background: #34495e; content: ""; }
+
 h2.pageTitle--grouped { margin-bottom: 0; }
 
 h3.pageSubtitle { font-weight: 300; }
-h3.pageSubtitle--grouped { font-weight: 300; font-size: 1em; }
+h3.pageSubtitle--grouped { font-weight: 300; font-size: 1em; margin-bottom: 32px; }
 
 .statText * { line-height: 1.5; }
 .statText h3, .statText h4, .statText h5, .statText h6 { font-weight: 300; line-height: 1.2; }
@@ -71,6 +73,18 @@ body { background: url(../images/skulls.png); font-family: 'Poppins', sans-serif
 .pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; width: 100%; padding: 0 0 60px 0; }
 
 .contentWrapper { width: 90%; max-width: 1200px; flex-basis: 90%; }
+
+.statText { margin-bottom: 40px; }
+
+.jumpTo-top { display: none; }
+@media only screen and (min-width: 1024px) { .jumpTo-top { display: -ms-flexbox; display: flex; justify-content: center; align-items: center; -webkit-transition: opacity linear 0.75s; -moz-transition: opacity linear 0.75s; -ms-transition: opacity linear 0.75s; -o-transition: opacity linear 0.75s; transition: opacity linear 0.75s; opacity: 0; position: fixed; right: 16px; bottom: 16px; width: 36px; height: 36px; border-radius: 3px; background: #34495e; z-index: 1000; cursor: default; }
+  .jumpTo-top svg { width: 24px; height: auto; fill: white; }
+  .jumpTo-top.visible { opacity: 1; cursor: pointer; } }
+
+.colorSamples__item .btn, .colorSamples__item .btn--copyHexa { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: none; outline: none; }
+
+.colorSamples__item input { -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 100%; }
+.colorSamples__item .btn--copyHexa { display: -ms-flexbox; display: flex; justify-content: center; align-items: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-align: center; }
 
 nav { display: -ms-flexbox; display: flex; justify-content: flex-end; align-items: baseline; width: 100%; padding: 8px 0; }
 

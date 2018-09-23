@@ -74,3 +74,12 @@
     text-indent: 100%;
     white-space: nowrap;
 }
+
+// Transitions
+@mixin transition($property: all,$timing: linear,$delay:1s) {
+  -webkit-transition: $property $timing $delay;
+  -moz-transition: $property $timing $delay;
+  -ms-transition: $property $timing $delay;
+  -o-transition: $property $timing $delay;
+  transition: $property $timing $delay;
+}

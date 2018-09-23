@@ -23,9 +23,25 @@ h6{
 %pageTitle{
     font-size: 2em;
     font-weight: 300;
+    //text-align: center;
+}
+%pageTitle--underline{
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    width: 150px;
+    height: 2px;
+    //margin: 0 auto;
+    background: $flat-color_8;
+    content: "";
 }
 h2.pageTitle{
     @extend %pageTitle;
+    &:after{
+        @extend %pageTitle--underline;
+    }
     @include m(grouped){
         @extend %pageTitle;
         margin-bottom: 0;
@@ -33,8 +49,15 @@ h2.pageTitle{
 }
 h3.pageSubtitle{
     font-weight: 300;
+    &:after{
+        @extend %pageTitle--underline;
+    }
     @include m(grouped){
         font-weight: 300;
         font-size: 1em;
+        margin-bottom: 32px;
+        &:after{
+            @extend %pageTitle--underline;
+        }
     }
 }
