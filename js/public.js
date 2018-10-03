@@ -34,13 +34,26 @@ $(document).ready(function(){
     });
 
     // Copy Hexa Colors
-    $('.btn--copyHexa').on('click', function () {
-        var colorCode = $(this).parent().children('input');
-        colorCode.select();
+    $('.btn--copyHexa').on('click', function(){
+        $(this).next('input').select();
         document.execCommand('copy');
     });
 
-    // Set Button Background Color
-    $('.btn--copyHexa').css("background", color);
+    // Set Sample Color
+    $('.colorCard').each(function() {
+
+        let sampleLight = $(this).children('.colorCard__colorSample--light');
+        let sampleDark = $(this).children('.colorCard__colorSample--dark');
+        let hexaData = $(this).children('.colorCard__data');
+
+        let colorLight = sampleLight.children('input').val();
+        let colorDark = sampleDark.children('input').val();
+
+        sampleLight.css('background', colorLight);
+        sampleDark.css('background', colorDark);
+
+        hexaData.children('.colorCard__data__hexa').text(colorLight + ' | ' + colorDark);
+
+    });
 
 });
