@@ -6,7 +6,7 @@ header{
 }
 .headerWrapper{
     width: 90%;
-    max-width:1200px;
+    max-width: $contentWidth;
     flex-basis: 90%;
 }
 .heade__seoWrapper{

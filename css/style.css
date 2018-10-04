@@ -56,7 +56,7 @@ h3.pageSubtitle--grouped { font-weight: 300; font-size: 1em; margin-bottom: 32px
 
 header { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; width: 100%; }
 
-.headerWrapper { width: 90%; max-width: 1200px; flex-basis: 90%; }
+.headerWrapper { width: 90%; max-width: 1440px; flex-basis: 90%; }
 
 .heade__seoWrapper { position: absolute; width: 1px; height: 1px; overflow: hidden; text-indent: 100%; white-space: nowrap; }
 
@@ -72,7 +72,7 @@ body { background: url(../images/skulls.png); font-family: 'Poppins', sans-serif
 
 .pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; width: 100%; padding: 0 0 60px 0; }
 
-.contentWrapper { width: 90%; max-width: 1200px; flex-basis: 90%; }
+.contentWrapper { width: 90%; max-width: 1440px; flex-basis: 90%; }
 
 .statText { margin-bottom: 40px; }
 
