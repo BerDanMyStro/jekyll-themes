@@ -1,8 +1,8 @@
 // >> Made By Style --- >
 
 .colorCards{
-    display: grid;
-    justify-items: center;
+    @include grid(flex-start, center);
+    //justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 32px;
     width: 90%;
@@ -10,8 +10,8 @@
     margin: 0 auto;
 }
 .colorCard{
-    transition: transform ease-out .2s;
-    display: grid;
+    @include transition(transform ease-out .2s);
+    @include grid(start, normal);
     width: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 150px auto;
@@ -30,17 +30,30 @@
 }
 .colorCard__data__name{
     font-size: 24px;
-    font-weight: bolder;
+    font-weight: 300;
     text-transform: uppercase;
 }
 .colorCard__data__hexa{
     font-size: 12px;
 }
+.colorCard__data__copyDone{
+    @include selectDisable;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 16px;
+    bottom: 0;
+    height: 26px;
+    margin: auto 0;
+    padding: 4px 8px;
+    border: 1px solid $base-fontColor;
+    border-radius: $base-radius;
+    background: b(0.0375);
+    cursor: default;
+}
 // Color Sample Style
 %colorCard__colorSample{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center);
     span{
         transition: opacity ease-in .25s;
         padding: 8px 16px;

@@ -35,8 +35,16 @@ $(document).ready(function(){
 
     // Copy Hexa Colors
     $('.btn--copyHexa').on('click', function(){
+
+        // Copy Code
         $(this).next('input').select();
         document.execCommand('copy');
+
+        //Display text
+        var copyDone = $(this).parent().parent().children('.colorCard__data').children('.colorCard__data__copyDone');
+
+        copyDone.fadeIn().delay(1200).fadeOut();
+
     });
 
     // Set Sample Color
