@@ -6,9 +6,6 @@
 		<title>{{page.title}}</title>
 		<meta name="description" content="Description">
 		<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/style.css">
-		<!--JS import-->
-		<script src="{{site.baseurl}}/js/jquery-3.3.1.min.js"></script>
-		<script src="{{site.baseurl}}/js/public.js"></script>
 		<!-- RealFavicon -->
 		<!-- Open Graph Protocol -->
     	<!-- Dublin Core -->
@@ -43,5 +40,8 @@
 				{% include footer__madeBy.html %}
 			</footer>
         </div>
+		<!--JS import-->
+		<script src="{{site.baseurl}}/js/jquery-3.3.1.min.js" defer></script>
+		<script src="{{site.baseurl}}/js/public.js" defer></script>
     </body>
 </html>

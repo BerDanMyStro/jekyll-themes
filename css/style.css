@@ -80,9 +80,9 @@ footer { width: 100%; background: #2c3e50; padding: 0 0 24px 0; }
 
 body { background: url(../images/skulls.png); font-family: 'Poppins', sans-serif; }
 
-.pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; width: 100%; padding: 40px 0 60px 0; }
+.pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; position: static; width: 100%; padding: 40px 0 60px 0; }
 
-.contentWrapper { width: 90%; max-width: 1440px; flex-basis: 90%; }
+.contentWrapper { width: 90%; max-width: 1440px; flex-basis: 90%; position: static; }
 
 .statText { margin-bottom: 40px; }
 
@@ -108,9 +108,10 @@ body { background: url(../images/skulls.png); font-family: 'Poppins', sans-serif
 .colorCard__colorSample--light input, .colorCard__colorSample--dark input { opacity: 0; position: absolute; left: 0; top: 0; }
 .colorCard__colorSample--light:hover span, .colorCard__colorSample--dark:hover span { opacity: 1; }
 
-nav { display: -ms-flexbox; display: flex; justify-content: flex-end; align-items: baseline; width: 100%; }
+nav { -webkit-transform: translateX(-100%); -moz-transform: translateX(-100%); -ms-transform: translateX(-100%); -o-transform: translateX(-100%); transform: translateX(-100%); -webkit-transition: transform ease-in-out 0.2s; -moz-transition: transform ease-in-out 0.2s; -ms-transition: transform ease-in-out 0.2s; -o-transition: transform ease-in-out 0.2s; transition: transform ease-in-out 0.2s; flex-wrap: wrap; position: fixed; top: 0; left: 0; width: 100%; max-width: 420px; height: 100%; padding: 16px; background: white; border-right: 2px solid #dddddd; z-index: 100; }
+nav.open { -webkit-transform: translateX(0); -moz-transform: translateX(0); -ms-transform: translateX(0); -o-transform: translateX(0); transform: translateX(0); }
 
-.toggleMenu { display: none; position: absolute; top: 56px; right: 0; width: 100%; background: white; z-index: 1000; }
+.toggleMenu { width: 100%; background: white; }
 .toggleMenu .toggleMenu__item a, .toggleMenu__item .toggleMenu a, .toggleMenu .toggleMenu__item--active a, .toggleMenu__item--active .toggleMenu a { display: block; padding: 10px 8px; }
 .toggleMenu__item a { color: gray; }
 .toggleMenu__item--active { background: #34495e; }

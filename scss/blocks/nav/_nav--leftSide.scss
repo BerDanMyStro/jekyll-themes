@@ -1,0 +1,46 @@
+// >> Toggle Menu Style --- >
+
+
+nav{
+    @include transform(translateX, -100%);
+    @include transition(transform, ease-in-out, 0.2s);
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    padding: 16px;
+    background: white;
+    border-right: 2px solid $base-borderColor;
+    z-index: 100;
+    &.open{
+        @include transform(translateX, 0);
+    }
+}
+.toggleMenu{
+    width: 100%;
+
+    background: white;
+    // toggleMenu__item a
+    %menuLink{
+        display: block;
+        padding: 10px 8px;
+    }
+    // toggleMenu__item
+    @include e(item){
+        a{
+            @extend %menuLink;
+            color: $base-fontColor;
+        }
+        // toggleMenu__item--active
+        @include m(active){
+            background: $flat-color_8;
+            a{
+                @extend %menuLink;
+                color: white;
+            }
+        }
+    }
+}
