@@ -108,7 +108,7 @@ body { background: url(../images/skulls.png); font-family: 'Poppins', sans-serif
 .colorCard__colorSample--light input, .colorCard__colorSample--dark input { opacity: 0; position: absolute; left: 0; top: 0; }
 .colorCard__colorSample--light:hover span, .colorCard__colorSample--dark:hover span { opacity: 1; }
 
-nav { -webkit-transform: translateX(-100%); -moz-transform: translateX(-100%); -ms-transform: translateX(-100%); -o-transform: translateX(-100%); transform: translateX(-100%); -webkit-transition: transform ease-in-out 0.2s; -moz-transition: transform ease-in-out 0.2s; -ms-transition: transform ease-in-out 0.2s; -o-transition: transform ease-in-out 0.2s; transition: transform ease-in-out 0.2s; flex-wrap: wrap; position: fixed; top: 0; left: 0; width: 100%; max-width: 420px; height: 100%; padding: 16px; background: white; border-right: 2px solid #dddddd; z-index: 100; }
+nav { -webkit-transform: translateX(-100%); -moz-transform: translateX(-100%); -ms-transform: translateX(-100%); -o-transform: translateX(-100%); transform: translateX(-100%); -webkit-transition: transform ease-in-out 0.2s; -moz-transition: transform ease-in-out 0.2s; -ms-transition: transform ease-in-out 0.2s; -o-transition: transform ease-in-out 0.2s; transition: transform ease-in-out 0.2s; flex-wrap: wrap; position: fixed; top: 0; left: 0; width: 100%; max-width: 420px; height: 100%; padding: 16px; background: white; border-right: 2px solid #dddddd; box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); z-index: 100; }
 nav.open { -webkit-transform: translateX(0); -moz-transform: translateX(0); -ms-transform: translateX(0); -o-transform: translateX(0); transform: translateX(0); }
 
 .toggleMenu { width: 100%; background: white; }
