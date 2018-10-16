@@ -1,0 +1,57 @@
+// >> Buttons Style --- >
+
+// Button for menu
+.btn--toggleMenu{
+    @include base-button;
+    float: right;
+    width: 40px;
+    height: 38px;
+    border-radius: $base-radius;
+    border-bottom: 2px solid $flat-color_10;
+    background: $flat-color_8;
+    &.open{
+        span:nth-child(1) {
+            top: 10px;
+            width: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+        }
+        span:nth-child(2) {
+            @include transform(rotate, 45deg);
+        }
+        span:nth-child(3) {
+            @include transform(rotate, -45deg);
+        }
+        &.open span:nth-child(4) {
+            top: 26px;
+            width: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+        }
+    }
+    span{
+        @include transition(all, ease-in-out, .25s);
+        @include transform(rotate, 0deg);
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 50%;
+        height: 2px;
+        margin: 0 auto;
+        background: #fff;
+        opacity: 1;
+        &:nth-child(1) {
+            top: 10px;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+            top: 18px;
+        }
+        &:nth-child(4) {
+            top: 26px;
+        }
+    }
+}

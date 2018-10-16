@@ -1,30 +1,17 @@
 // >> Toggle Menu Style --- >
 
+
 nav{
     @include flex(flex-end);
     width: 100%;
-    padding: 8px 0;
-}
-.btn--toggleMenu{
-    @include base-button;
-    width: 40px;
-    height: 38px;
-    border-radius: $base-radius;
-    border-bottom: 2px solid $flat-color_10;
-    background: $flat-color_8;
-    svg{
-        width: 18px;
-        height: auto;
-        fill: white;
-        margin-top: 5px;
-    }
+
 }
 .toggleMenu{
     display: none;
     position: absolute;
     top: 56px;
     right: 0;
-    width: 180px;
+    width: 100%;
     background: white;
     z-index: 1000;
     // toggleMenu__item a

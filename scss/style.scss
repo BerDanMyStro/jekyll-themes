@@ -11,6 +11,7 @@
 
 // Import Base Style
 @import "./base/reset-v20180912";
+@import "./base/buttons";
 @import "./base/headlines";
 @import "./base/baseText";
 
@@ -22,4 +23,4 @@
 // Impor BEM - block
 @import "./blocks/colorSamples";
 @import "./blocks/toggleMenu";
-@import "./blocks/madeBy"
+@import "./blocks/madeBy";

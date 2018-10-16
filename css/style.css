@@ -27,6 +27,16 @@ img { display: block; width: 100%; margin: 0; padding: 0; border: none; outline:
 
 a { outline: none; text-decoration: none; }
 
+.btn--toggleMenu { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: none; outline: none; cursor: pointer; float: right; width: 40px; height: 38px; border-radius: 3px; border-bottom: 2px solid #2c3e50; background: #34495e; }
+.btn--toggleMenu.open span:nth-child(1) { top: 10px; width: 0; left: 0; right: 0; opacity: 0; }
+.btn--toggleMenu.open span:nth-child(2) { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+.btn--toggleMenu.open span:nth-child(3) { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
+.btn--toggleMenu.open.open span:nth-child(4) { top: 26px; width: 0; left: 0; right: 0; opacity: 0; }
+.btn--toggleMenu span { -webkit-transition: all ease-in-out 0.25s; -moz-transition: all ease-in-out 0.25s; -ms-transition: all ease-in-out 0.25s; -o-transition: all ease-in-out 0.25s; transition: all ease-in-out 0.25s; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg); display: block; position: absolute; left: 0; right: 0; width: 50%; height: 2px; margin: 0 auto; background: #fff; opacity: 1; }
+.btn--toggleMenu span:nth-child(1) { top: 10px; }
+.btn--toggleMenu span:nth-child(2), .btn--toggleMenu span:nth-child(3) { top: 18px; }
+.btn--toggleMenu span:nth-child(4) { top: 26px; }
+
 h2, h3, h4, h5, h6 { margin-bottom: 1em; line-height: 1.2; }
 
 h3 { font-size: 1.75rem; }
@@ -54,11 +64,11 @@ h3.pageSubtitle--grouped { font-weight: 300; font-size: 1em; margin-bottom: 32px
 .statText a { color: #4aa3df; }
 .statText code { padding: 0.25rem 0.5rem; border-radius: 3px; background: rgba(0, 0, 0, 0.75); color: white; }
 
-header { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; width: 100%; }
+header { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; width: 100%; padding: 16px 0; background: #fbfcfc; border-bottom: 2px solid #dddddd; }
 
 .headerWrapper { width: 90%; max-width: 1440px; flex-basis: 90%; }
 
-.heade__seoWrapper { position: absolute; width: 1px; height: 1px; overflow: hidden; text-indent: 100%; white-space: nowrap; }
+.header__seoWrapper { position: absolute; width: 1px; height: 1px; overflow: hidden; text-indent: 100%; white-space: nowrap; }
 
 .mobilFooter { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: baseline; flex-direction: column; margin-bottom: 24px; }
 .mobilFooter .mobilFooter__item, .mobilFooter .mobilFooter__item--jumpTo { display: -ms-flexbox; display: flex; justify-content: center; align-items: center; width: 100%; max-width: 100%; flex-basis: 100%; height: 36px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: white; text-align: center; }
@@ -70,7 +80,7 @@ footer { width: 100%; background: #2c3e50; padding: 0 0 24px 0; }
 
 body { background: url(../images/skulls.png); font-family: 'Poppins', sans-serif; }
 
-.pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; width: 100%; padding: 0 0 60px 0; }
+.pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; width: 100%; padding: 40px 0 60px 0; }
 
 .contentWrapper { width: 90%; max-width: 1440px; flex-basis: 90%; }
 
@@ -98,12 +108,9 @@ body { background: url(../images/skulls.png); font-family: 'Poppins', sans-serif
 .colorCard__colorSample--light input, .colorCard__colorSample--dark input { opacity: 0; position: absolute; left: 0; top: 0; }
 .colorCard__colorSample--light:hover span, .colorCard__colorSample--dark:hover span { opacity: 1; }
 
-nav { display: -ms-flexbox; display: flex; justify-content: flex-end; align-items: baseline; width: 100%; padding: 8px 0; }
+nav { display: -ms-flexbox; display: flex; justify-content: flex-end; align-items: baseline; width: 100%; }
 
-.btn--toggleMenu { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: none; outline: none; cursor: pointer; width: 40px; height: 38px; border-radius: 3px; border-bottom: 2px solid #2c3e50; background: #34495e; }
-.btn--toggleMenu svg { width: 18px; height: auto; fill: white; margin-top: 5px; }
-
-.toggleMenu { display: none; position: absolute; top: 56px; right: 0; width: 180px; background: white; z-index: 1000; }
+.toggleMenu { display: none; position: absolute; top: 56px; right: 0; width: 100%; background: white; z-index: 1000; }
 .toggleMenu .toggleMenu__item a, .toggleMenu__item .toggleMenu a, .toggleMenu .toggleMenu__item--active a, .toggleMenu__item--active .toggleMenu a { display: block; padding: 10px 8px; }
 .toggleMenu__item a { color: gray; }
 .toggleMenu__item--active { background: #34495e; }

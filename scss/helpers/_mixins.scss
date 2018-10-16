@@ -83,3 +83,12 @@
   -o-transition: $property $timing $delay;
   transition: $property $timing $delay;
 }
+
+// Transform
+@mixin transform($transform-type,$transform-amount){
+    -webkit-transform: $transform-type+unquote('(#{$transform-amount})');
+    -moz-transform: $transform-type+unquote('(#{$transform-amount})');
+    -ms-transform: $transform-type+unquote('(#{$transform-amount})');
+    -o-transform: $transform-type+unquote('(#{$transform-amount})');
+    transform: $transform-type+unquote('(#{$transform-amount})');
+}

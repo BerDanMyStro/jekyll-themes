@@ -3,6 +3,7 @@
 $(document).ready(function(){
     // Menu toggle
     $('.btn--toggleMenu').on('click', function(){
+        $(this).toggleClass('open');
         $('.toggleMenu').slideToggle("fast");
     });
 

@@ -21,11 +21,19 @@
             		<a href="index.html" class="header__logo">
             			{% include header__seoWrapper.html %}
             		</a>
-            		{% include nav.html %}
+					<button type="button" name="toggleMenu" class="btn--toggleMenu">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
             	</div>
             </header>
 			<div class="pageWrapper">
-            	{{content}}
+				<div class="contentWrapper">
+					{% include nav.html %}
+            		{{content}}
+				</div>
 				<a href="#jumpHere" class="jumpTo-top">
 					<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg id="Layer_1" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="396.6,352 416,331.3 256,160 96,331.3 115.3,352 256,201.5 "/></svg>
 				</a>

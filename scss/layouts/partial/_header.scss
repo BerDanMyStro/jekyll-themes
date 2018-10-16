@@ -3,13 +3,15 @@
 header{
     @include flex(center, baseline);
     width: 100%;
+    padding: 16px 0;
+    background: #fbfcfc;
+    border-bottom: 2px solid $base-borderColor;
 }
 .headerWrapper{
     width: 90%;
     max-width: $contentWidth;
     flex-basis: 90%;
 }
-.heade__seoWrapper{
+.header__seoWrapper{
     @include hiddenText;
-
 }
