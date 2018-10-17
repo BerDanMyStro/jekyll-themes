@@ -1,11 +1,15 @@
 // >> Reset Style --- >
 
 $(document).ready(function(){
-    // Menu toggle
+    // Left Side Menu
     $('.btn--toggleMenu').on('click', function(){
         $(this).toggleClass('open');
         $('nav').toggleClass('open');
     });
+
+    // >> Left Side Menu Title
+    let pageTitle = $('h2.pageTitle');
+    $('.nav--leftSide h3').text(pageTitle[0].textContent);
 
     // Jump to top - mobilFooter
     $('.mobilFooter__item--jumpTo').on('click', function(){

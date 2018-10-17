@@ -1,9 +1,8 @@
 // >> Made By Style --- >
 
 .colorCards{
-    @include grid(flex-start, center);
-    //justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    @include grid(center, center);
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
     grid-gap: 32px;
     width: 90%;
     height: 100%;

@@ -19,6 +19,12 @@ nav{
     &.open{
         @include transform(translateX, 0);
     }
+    h3.pageSubtitle{
+        font-size: rem(20px);
+        &:after{
+            height: 1px;
+        }
+    }
 }
 .toggleMenu{
     width: 100%;
