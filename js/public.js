@@ -6,6 +6,10 @@ $(document).ready(function(){
         $(this).toggleClass('open');
         $('nav').toggleClass('open');
     });
+    $('.btn--closeMenu').on('click', function(){
+        $('.btn--toggleMenu').toggleClass('open');
+        $('nav').toggleClass('open');
+    });
 
     // >> Left Side Menu Title
     let pageTitle = $('h2.pageTitle');

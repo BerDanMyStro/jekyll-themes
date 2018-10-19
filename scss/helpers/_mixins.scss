@@ -20,6 +20,12 @@
     }
 }
 
+@mixin mq-max($break){
+    @media only screen and (max-width: $break) {
+        @content;
+    }
+}
+
 // Apparens None - browser fix
 @mixin appearencNone{
     -webkit-appearance:none;

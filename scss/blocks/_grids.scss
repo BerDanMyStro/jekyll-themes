@@ -1,0 +1,66 @@
+// >> Grids Style --- >
+
+.gridLines{
+    @include flex(flex-start, flex-start);
+    &:last-child div,
+    div:nth-child(2n){
+        background: $flat-color_8;
+    }
+}
+%grid{
+    display: block;
+    margin: 0 2% 8px 0;
+    border-radius: $base-radius;
+    color: white;
+    background: $flat-color_10;
+    text-align: center;
+    line-height: 36px;
+}
+.grid-1{
+    @extend %grid;
+    @include flexWidth(6.5%);
+}
+.grid-2{
+    @extend %grid;
+    @include flexWidth(15%);
+}
+.grid-3{
+    @extend %grid;
+    @include flexWidth(23.5%);
+}
+.grid-4{
+    @extend %grid;
+    @include flexWidth(32%);
+}
+.grid-5{
+    @extend %grid;
+    @include flexWidth(40.5%);
+}
+.grid-6{
+    @extend %grid;
+    @include flexWidth(49%);
+}
+.grid-7{
+    @extend %grid;
+    @include flexWidth(57.5%);
+}
+.grid-8{
+    @extend %grid;
+    @include flexWidth(66%);
+}
+.grid-9{
+    @extend %grid;
+    @include flexWidth(74.5%);
+}
+.grid-10{
+    @extend %grid;
+    @include flexWidth(83%);
+}
+.grid-11{
+    @extend %grid;
+    @include flexWidth(91.5%);
+}
+.grid-12{
+    @extend %grid;
+    @include flexWidth(100%);
+}
