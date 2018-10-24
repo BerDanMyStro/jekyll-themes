@@ -17,16 +17,18 @@ $(document).ready(function(){
 
     // >> Section Menu
 
+    let sectionLink = $('.sectionNav__item a');
+
         // Create elements
-        $('.sectionNav__item a').each(function(){
+        sectionLink.each(function(){
             $(this).html('<span class="sectionNo">'+ $(this).html() +'</span><span class="circle"><span><em></em></span><span><em></em></span></span>');
         });
 
-        $('.sectionNav__item a').on('click', function(){
-            var l=$($(this).attr('href')).offset().top;
-            $('body, html').stop().animate({scrollTop:l}, 500);
-            return false;
-        });
+    sectionLink.on('click', function(){
+        var l=$($(this).attr('href')).offset().top;
+        $('body, html').stop().animate({scrollTop:l}, 500);
+        return false;
+    });
 
 
     // Jump to top - mobilFooter
