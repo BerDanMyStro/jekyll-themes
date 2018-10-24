@@ -1,7 +1,4 @@
 <nav class="nav--leftSide">
-    <div class="btn--closeMenu">
-        <svg enable-background="new 0 0 26 26" id="Layer_1" version="1.1" viewBox="0 0 26 26" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><polygon fill="#231F20" points="23.885,0.58 25.969,2.664 15.133,13.5 25.969,24.336 23.885,26.42 10.965,13.5  "/><polygon fill="#231F20" points="12.885,0.58 14.969,2.664 4.133,13.5 14.969,24.336 12.885,26.42 -0.035,13.5  "/></g></svg>
-    </div>
     <h3 class="pageSubtitle"></h3>
     <ul class="toggleMenu">
         <li class="{% if page.url == '/' %}toggleMenu__item--active{% else %}toggleMenu__item{% endif %}">
@@ -9,6 +6,29 @@
         </li>
         <li class="{% if page.url == '/headlines.html' %}toggleMenu__item--active{% else %}toggleMenu__item{% endif %}">
             <a href="{{site.baseurl}}/headlines.html">Headlines</a>
+        </li>
+        <li class="{% if page.url == '/content-and-submenu.html' %}toggleMenu__item--active{% else %}toggleMenu__item{% endif %}">
+            <a href="{{site.baseurl}}/content-and-submenu.html" title="Content & Submenu">Content & Submenu</a>
+            <div class="btn--openSub" title="Submenu">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="toggleSubmenu">
+                <li class="{% if page.url == '/content-and-submenu__01.html' %}toggleSubmenu__item--active{% else %}toggleSubmenu__item{% endif %}">
+                    <a href="{{site.baseurl}}/content-and-submenu__01.html">Submenu 01</a>
+                </li>
+                <li class="toggleSubmenu__item">
+                    <a href="#">Submenu 02</a>
+                </li>
+                <li class="toggleSubmenu__item">
+                    <a href="#">Submenu 03</a>
+                </li>
+                <li class="toggleSubmenu__item">
+                    <a href="#">Submenu 04</a>
+                </li>
+            </ul>
         </li>
         <li class="{% if page.url == '/flat-colors.html' %}toggleMenu__item--active{% else %}toggleMenu__item{% endif %}">
             <a href="{{site.baseurl}}/flat-colors.html">Flat Colors</a>

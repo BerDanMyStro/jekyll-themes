@@ -6,9 +6,9 @@ $(document).ready(function(){
         $(this).toggleClass('open');
         $('nav').toggleClass('open');
     });
-    $('.btn--closeMenu').on('click', function(){
-        $('.btn--toggleMenu').toggleClass('open');
-        $('nav').toggleClass('open');
+    $('.btn--openSub').on('click', function(){
+        $(this).toggleClass('open');
+        $(this).next('.toggleSubmenu').slideToggle();
     });
 
     // >> Left Side Menu Title

@@ -9,9 +9,9 @@
     border-radius: $base-radius;
     border-bottom: 2px solid $flat-color_10;
     background: $flat-color_8;
+    z-index: 101;
     &.open{
         span:nth-child(1) {
-            top: 10px;
             width: 0;
             left: 0;
             right: 0;
@@ -24,7 +24,6 @@
             @include transform(rotate, -45deg);
         }
         &.open span:nth-child(4) {
-            top: 26px;
             width: 0;
             left: 0;
             right: 0;
@@ -52,6 +51,59 @@
         }
         &:nth-child(4) {
             top: 26px;
+        }
+    }
+}
+.btn--openSub{
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    top: 0;
+    right: 0;
+    background: w(0.1);
+    z-index: 2;
+    cursor: pointer;
+    &.open{
+        span:nth-child(1) {
+            width: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+        }
+        span:nth-child(2) {
+            @include transform(rotate, 45deg);
+        }
+        span:nth-child(3) {
+            @include transform(rotate, -45deg);
+        }
+        &.open span:nth-child(4) {
+            width: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+        }
+    }
+    span{
+        @include transition(all, ease-in-out, .25s);
+        @include transform(rotate, 0deg);
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 50%;
+        height: 2px;
+        margin: 0 auto;
+        background: $base-fontColor;
+        opacity: 1;
+        &:nth-child(1) {
+            top: 10px;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+            top: 17px;
+        }
+        &:nth-child(4) {
+            top: 24px;
         }
     }
 }
