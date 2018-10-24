@@ -15,6 +15,20 @@ $(document).ready(function(){
     let pageTitle = $('h2.pageTitle');
     $('.nav--leftSide h3').text(pageTitle[0].textContent);
 
+    // >> Section Menu
+
+        // Create elements
+        $('.sectionNav__item a').each(function(){
+            $(this).html('<span class="sectionNo">'+ $(this).html() +'</span><span class="circle"><span><em></em></span><span><em></em></span></span>');
+        });
+
+        $('.sectionNav__item a').on('click', function(){
+            var l=$($(this).attr('href')).offset().top;
+            $('body, html').stop().animate({scrollTop:l}, 500);
+            return false;
+        });
+
+
     // Jump to top - mobilFooter
     $('.mobilFooter__item--jumpTo').on('click', function(){
         var l=$($(this).attr('href')).offset().top;

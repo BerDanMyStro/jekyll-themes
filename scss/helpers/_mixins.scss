@@ -51,7 +51,7 @@
 }
 
 // Display Mixins
-@mixin flex($justify: flex-start, $align: baseline){
+@mixin flex($justify: flex-start, $align: flex-start){
     display: -ms-flexbox;
     display: flex;
     justify-content: $justify;

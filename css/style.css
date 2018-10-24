@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext");
-body { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: baseline; flex-direction: column; }
-body .stickyWrapper { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: baseline; flex: 1 1 auto; flex-flow: column wrap; width: 100%; min-height: 100vh; margin: 0; padding: 0; }
+body { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; }
+body .stickyWrapper { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: flex-start; flex: 1 1 auto; flex-flow: column wrap; width: 100%; min-height: 100vh; margin: 0; padding: 0; }
 body .stickyWrapper .pageWrapper { flex: 1 1 auto; width: 100%; }
 
 * { position: relative; box-sizing: border-box; -moz-box-sizing: border-box; }
@@ -80,7 +80,7 @@ header { display: -ms-flexbox; display: flex; justify-content: center; align-ite
 
 .header__seoWrapper { position: absolute; width: 1px; height: 1px; overflow: hidden; text-indent: 100%; white-space: nowrap; }
 
-.mobilFooter { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: baseline; flex-direction: column; margin-bottom: 24px; }
+.mobilFooter { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; margin-bottom: 24px; }
 .mobilFooter .mobilFooter__item, .mobilFooter .mobilFooter__item--jumpTo { display: -ms-flexbox; display: flex; justify-content: center; align-items: center; width: 100%; max-width: 100%; flex-basis: 100%; height: 36px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: white; text-align: center; }
 .mobilFooter__item--jumpTo svg { width: 28px; height: auto; fill: white; }
 @media only screen and (min-width: 1024px) { .mobilFooter { display: none; } }
@@ -146,6 +146,24 @@ nav h3.pageSubtitle:after { height: 1px; }
 .toggleSubmenu__item--active { margin-top: 4px; }
 .toggleSubmenu__item--active > a { color: #34495e; }
 .toggleSubmenu__item--active:before { display: block; position: absolute; top: 0; left: -20px; width: 20px; height: 36px; background: url("../images/icon-subMenu__item.svg") no-repeat right center/8px; content: ""; }
+
+.sectionWrapper section { display: -ms-flexbox; display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh; background: rgba(0, 0, 0, 0.1); color: white; font-size: 2rem; font-weight: bold; }
+
+.sectionNav { display: -ms-flexbox; display: flex; justify-content: center; align-items: center; flex-direction: column; position: fixed; right: 16px; top: 0; bottom: 0; width: 36px; height: max-content; margin: auto 0; padding: 8px 0; border-radius: 3px; background: #34495e; z-index: 1001; }
+.sectionNav__item { margin-bottom: 4px; }
+.sectionNav__item:last-child { margin-bottom: 0; }
+.sectionNav__item a { display: block; width: 24px; height: 24px; color: white; font-size: 10px; font-weight: 400; text-align: center; line-height: 24px; }
+.sectionNav__item a .sectionNo { position: relative; z-index: 2; }
+.sectionNav__item a .circle { position: absolute; z-index: 1; top: 0; left: 0; display: block; width: 100%; height: 100%; border-radius: 100%; }
+.sectionNav__item a .circle:after { content: ''; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 100%; background: #34495e; }
+.sectionNav__item a .circle span { position: absolute; width: 50%; height: 100%; overflow: hidden; }
+.sectionNav__item a .circle span em { position: absolute; border-radius: 999px; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.95); transition: transform .25s linear; }
+.sectionNav__item a .circle span:first-child { left: 0; }
+.sectionNav__item a .circle span:first-child em { left: 100%; border-top-left-radius: 0; border-bottom-left-radius: 0; transform-origin: 0 50%; }
+.sectionNav__item a .circle span:last-child { left: 50%; }
+.sectionNav__item a .circle span:last-child em { left: -100%; border-top-right-radius: 0; border-bottom-right-radius: 0; transform-origin: 100% 50%; transition-delay: .25s; }
+.sectionNav__item a:hover .circle span:first-child em { transform: rotate(180deg); transition: transform .5s ease-out; transition-delay: .25s; }
+.sectionNav__item a:hover .circle span:last-child em { transform: rotate(180deg); transition: transform .25s linear; }
 
 .gridLines { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: flex-start; }
 .gridLines:last-child div, .gridLines div:nth-child(2n) { background: #34495e; }
