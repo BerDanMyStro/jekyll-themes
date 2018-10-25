@@ -88,6 +88,11 @@ header { display: -ms-flexbox; display: flex; justify-content: center; align-ite
 footer { width: 100%; background: #2c3e50; padding: 0 0 24px 0; }
 @media only screen and (min-width: 1024px) { footer { padding: 24px 0; } }
 
+* { cursor: none; }
+* .circleCursor { position: absolute; height: 8px; width: 8px; border-radius: 50%; transform: translateX(-50%) translateY(-50%); background-color: #fff; box-shadow: 0 0 1px black; }
+* .circleCursor.point { z-index: 1; }
+* .circleCursor.stork { height: 24px; width: 24px; background-color: transparent; border: 2px solid white; }
+
 body { background: url(../images/skulls.png); font-family: 'Poppins', sans-serif; }
 
 .pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; position: static; width: 100%; padding: 40px 0 60px 0; }

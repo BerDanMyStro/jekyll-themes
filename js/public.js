@@ -1,6 +1,30 @@
 // >> Reset Style --- >
 
+function scrollTo(target, speed) {
+    if (target) {
+        var y = target.offset().top;
+        $('body, html').animate({scrollTop: y}, speed || 500);
+        return false;
+    }
+}
+
+// Circle cursor
+$(document).mousemove(function(e) {
+    $('.circleCursor').eq(0).css({
+        left: e.pageX,
+        top: e.pageY
+    });
+    setTimeout(function() {
+        $('.circleCursor').eq(1).css({
+            left: e.pageX,
+            top: e.pageY
+        });
+    }, 75);
+});
+
+
 $(document).ready(function(){
+
     // Left Side Menu
     $('.btn--toggleMenu').on('click', function(){
         $(this).toggleClass('open');
@@ -25,16 +49,14 @@ $(document).ready(function(){
         });
 
     sectionLink.on('click', function(){
-        var l=$($(this).attr('href')).offset().top;
-        $('body, html').stop().animate({scrollTop:l}, 500);
+        scrollTo($($(this).attr('href')), 500);
         return false;
     });
 
 
     // Jump to top - mobilFooter
     $('.mobilFooter__item--jumpTo').on('click', function(){
-        var l=$($(this).attr('href')).offset().top;
-        $('body, html').stop().animate({scrollTop:l}, 500);
+        scrollTo($($(this).attr('href')), 500);
         return false;
     });
 
@@ -53,8 +75,7 @@ $(document).ready(function(){
 
     // Trigger on click
     btn_jumpTo_top.on('click', function(){
-        var l=$($(this).attr('href')).offset().top;
-        $('body, html').stop().animate({scrollTop:l}, 500);
+        scrollTo($($(this).attr('href')), 500);
         return false;
     });
 
