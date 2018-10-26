@@ -1,0 +1,25 @@
+// >> Base Form Style --- >
+
+$form-padding: 0 0 0 0;
+
+.baseForm{
+    // Main styles
+    .form__item{
+        margin: 0 0 16px 0;
+    }
+    label{
+        display: block;
+    }
+    input, select, textarea, button{
+        @include appearencNone;
+        margin: 0;
+        padding: $form-padding;
+        border: none;
+        outline: none;
+    }
+
+    // Input Text
+    input[type=text]{
+
+    }
+}

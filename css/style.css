@@ -155,6 +155,7 @@ nav h3.pageSubtitle:after { height: 1px; }
 @media only screen and (min-width: 756px) { .sectionNav__item { margin: 0 0 8px 0; } }
 .sectionNav__item:last-child { margin: 0; }
 .sectionNav__item a { display: block; width: 24px; height: 24px; color: white; font-size: 10px; font-weight: 400; text-align: center; line-height: 24px; }
+.sectionNav__item a.current span:after { background: #2c3e50; }
 .sectionNav__item a .sectionNo { position: relative; z-index: 2; }
 .sectionNav__item a .circle { display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 100%; z-index: 1; }
 .sectionNav__item a .circle:after { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 100%; background: #34495e; content: ''; }
@@ -166,6 +167,10 @@ nav h3.pageSubtitle:after { height: 1px; }
 .sectionNav__item a .circle span:last-child em { left: -100%; border-top-right-radius: 0; border-bottom-right-radius: 0; -webkit-transform-origin: 100% 50%; transform-origin: 100% 50%; -webkit-transition-delay: .25s; transition-delay: .25s; }
 .sectionNav__item a:hover .circle span:first-child em { -webkit-transition: transform ease-out 0.5s; -moz-transition: transform ease-out 0.5s; -ms-transition: transform ease-out 0.5s; -o-transition: transform ease-out 0.5s; transition: transform ease-out 0.5s; -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ms-transform: rotate(180deg); -o-transform: rotate(180deg); transform: rotate(180deg); -webkit-transition-delay: .25s; transition-delay: .25s; }
 .sectionNav__item a:hover .circle span:last-child em { -webkit-transition: transform ease-in 0.25s; -moz-transition: transform ease-in 0.25s; -ms-transition: transform ease-in 0.25s; -o-transition: transform ease-in 0.25s; transition: transform ease-in 0.25s; -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ms-transform: rotate(180deg); -o-transform: rotate(180deg); transform: rotate(180deg); }
+
+.baseForm .form__item { margin: 0 0 16px 0; }
+.baseForm label { display: block; }
+.baseForm input, .baseForm select, .baseForm textarea, .baseForm button { -webkit-appearance: none; -moz-appearance: none; appearance: none; margin: 0; padding: 0 0 0 0; border: none; outline: none; }
 
 .gridLines { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: flex-start; }
 .gridLines:last-child div, .gridLines div:nth-child(2n) { background: #34495e; }
