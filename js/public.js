@@ -41,23 +41,6 @@ $(document).ready(function(){
             let section = $('.sectionWrapper section');
             let i;
 
-            // Set fix position before footer on scroll at mobil devices
-            let docHeight = $(document).height();
-            let footerHeight = $('.pageFooter').height();
-            let sectionNav = $('.sectionNav')
-            let sectionNav_height = sectionNav.height();
-
-            let deadLine = docHeight - ( $(window).height() + sectionNav_height + 16);
-
-            console.log(scroll);
-            console.log(deadLine);
-
-            if ( $( window ).width() < 768 && scroll >= deadLine ){
-                sectionNav.css('bottom', footerHeight + 16);
-            } else {
-                sectionNav.css('bottom', 16);
-            }
-
             for (i=0; i < section.length; i++){
 
                 let currentSection = section.eq(i);

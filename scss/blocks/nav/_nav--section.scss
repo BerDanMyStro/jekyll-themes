@@ -14,10 +14,6 @@
 .sectionNav{
     @include flex(center, center);
     flex-direction: row;
-    position: fixed;
-    right: 0;
-    left: 0;
-    bottom: 16px;
     height: 36px;
     width: max-content;
     margin: 0 auto;
@@ -26,6 +22,7 @@
     background: $flat-color_8;
     z-index: 99;
     @include mq($ipad-port){
+        position: fixed;
         flex-direction: column;
         right: 16px;
         left: auto;
