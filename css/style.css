@@ -85,7 +85,7 @@ header { display: -ms-flexbox; display: flex; justify-content: center; align-ite
 .mobilFooter__item--jumpTo svg { width: 28px; height: auto; fill: white; }
 @media only screen and (min-width: 1024px) { .mobilFooter { display: none; } }
 
-footer { width: 100%; background: #2c3e50; padding: 0 0 24px 0; }
+footer { width: 100%; background: #2c3e50; padding: 0; }
 @media only screen and (min-width: 1024px) { footer { padding: 24px 0; } }
 
 body { background: url(../images/skulls.png); font-family: 'Poppins', sans-serif; }
@@ -201,6 +201,7 @@ nav h3.pageSubtitle:after { height: 1px; }
 
 .grid-12 { width: 100%; max-width: 100%; flex-basis: 100%; }
 
-.madeBy { width: 100%; color: white; font-size: 0.6875rem; text-align: center; }
+.madeBy { width: 100%; margin-bottom: 24px; color: white; font-size: 0.6875rem; text-align: center; }
+@media only screen and (min-width: 1024px) { .madeBy { margin-bottom: 0; } }
 
 /*# sourceMappingURL=style.css.map */

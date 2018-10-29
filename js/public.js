@@ -24,7 +24,9 @@ $(document).ready(function(){
     $('.nav--leftSide h3').text(pageTitle[0].textContent);
 
     // >> Section Menu
+    let navItem = $('.sectionNav__item');
     let sectionLink = $('.sectionNav__item a');
+
 
         // Create elements
         sectionLink.each(function(){
@@ -38,7 +40,22 @@ $(document).ready(function(){
             let scroll = $(window).scrollTop();
             let section = $('.sectionWrapper section');
             let i;
-            let navItem = $('.sectionNav__item');
+
+            // Set fix position before footer on scroll at mobil devices
+            let docHeight = $(document).height();
+            let footerHeight = $('.pageFooter').height();
+            let sectionNav_height = $('.sectionNav').height();
+
+            let deadLine = docHeight - ( $(window).height() + 16);
+
+            console.log(scroll);
+            console.log(deadLine);
+
+            if ( $( window ).width() < 768 && scroll >= deadLine ){
+                $('.sectionNav').css('bottom', footerHeight + 16);
+            } else {
+                $('.sectionNav').css('bottom', 16);
+            }
 
             for (i=0; i < section.length; i++){
 
@@ -56,13 +73,18 @@ $(document).ready(function(){
 
         });
 
-        //trigger the scroll - current position when page is refreshed
+
+
+        // Trigger the scroll - current position when page is refreshed
         $(window).scroll();
 
     sectionLink.on('click', function(){
         scrollTo($($(this).attr('href')), 500);
         return false;
     });
+
+
+
 
     // Jump to top - mobilFooter
     $('.mobilFooter__item--jumpTo').on('click', function(){

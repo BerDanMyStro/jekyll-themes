@@ -2,7 +2,11 @@
 
 .madeBy{
     width: 100%;
+    margin-bottom: 24px;
     color: white;
     font-size: rem(11px);
     text-align: center;
+    @include mq($ipad-land){
+        margin-bottom: 0;
+    }
 }
