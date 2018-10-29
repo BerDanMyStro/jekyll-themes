@@ -44,7 +44,8 @@ $(document).ready(function(){
             // Set fix position before footer on scroll at mobil devices
             let docHeight = $(document).height();
             let footerHeight = $('.pageFooter').height();
-            let sectionNav_height = $('.sectionNav').height();
+            let sectionNav = $('.sectionNav')
+            let sectionNav_height = sectionNav.height();
 
             let deadLine = docHeight - ( $(window).height() + sectionNav_height + 16);
 
@@ -52,9 +53,9 @@ $(document).ready(function(){
             console.log(deadLine);
 
             if ( $( window ).width() < 768 && scroll >= deadLine ){
-                $('.sectionNav').css('bottom', footerHeight + 16);
+                sectionNav.css('bottom', footerHeight + 16);
             } else {
-                $('.sectionNav').css('bottom', 16);
+                sectionNav.css('bottom', 16);
             }
 
             for (i=0; i < section.length; i++){
