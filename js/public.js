@@ -46,7 +46,7 @@ $(document).ready(function(){
             let footerHeight = $('.pageFooter').height();
             let sectionNav_height = $('.sectionNav').height();
 
-            let deadLine = docHeight - ( $(window).height() + 16);
+            let deadLine = docHeight - ( $(window).height() + sectionNav_height + 16);
 
             console.log(scroll);
             console.log(deadLine);
