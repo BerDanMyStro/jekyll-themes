@@ -154,8 +154,8 @@ nav h3.pageSubtitle:after { height: 1px; }
 .sectionNav__item { margin: 0 8px 0 0; }
 @media only screen and (min-width: 756px) { .sectionNav__item { margin: 0 0 8px 0; } }
 .sectionNav__item:last-child { margin: 0; }
+.sectionNav__item.current a span:after { background: #57738e; }
 .sectionNav__item a { display: block; width: 24px; height: 24px; color: white; font-size: 10px; font-weight: 400; text-align: center; line-height: 24px; }
-.sectionNav__item a.current span:after { background: #2c3e50; }
 .sectionNav__item a .sectionNo { position: relative; z-index: 2; }
 .sectionNav__item a .circle { display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 100%; z-index: 1; }
 .sectionNav__item a .circle:after { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 100%; background: #34495e; content: ''; }

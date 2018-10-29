@@ -44,6 +44,9 @@
         &:last-child{
             margin: 0;
         }
+        &.current a span:after{
+            background: #57738e; // Circle Color
+        }
         a{
             display: block;
             width: 24px;
@@ -53,9 +56,6 @@
             font-weight: 400;
             text-align: center;
             line-height: 24px;
-            &.current span:after{
-                background: $flat-color_10; // Circle Color
-            }
             .sectionNo {
                 position: relative;
                 z-index: 2;

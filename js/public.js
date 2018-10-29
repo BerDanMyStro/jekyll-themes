@@ -1,5 +1,13 @@
 // >> Reset Style --- >
 
+function scrollTo(target, speed) {
+    if (target) {
+        let y = target.offset().top;
+        $('body, html').animate({scrollTop: y}, speed || 500);
+        return false;
+    }
+}
+
 $(document).ready(function(){
     // Left Side Menu
     $('.btn--toggleMenu').on('click', function(){
@@ -16,60 +24,49 @@ $(document).ready(function(){
     $('.nav--leftSide h3').text(pageTitle[0].textContent);
 
     // >> Section Menu
-
     let sectionLink = $('.sectionNav__item a');
-    let no_sectionNav__items = $('.sectionNav__item').length;
-    let no_sections = $('.sectionWrapper section').length;
 
         // Create elements
         sectionLink.each(function(){
             $(this).html('<span class="sectionNo">'+ $(this).html() +'</span><span class="circle"><span><em></em></span><span><em></em></span></span>');
         });
 
-        // Display current section
+        // Display current section on Section Menu
 
         $(window).scroll(function (event) {
-            let scroll = $(window).scrollTop();
 
-            if ( scroll >= $('#section--no1').offset().top && scroll < $('#section--no2').offset().top ) {
-                $('.sectionNav__item:nth-child(2) a').removeClass('current');
-                $('.sectionNav__item:nth-child(3) a').removeClass('current');
-                $('.sectionNav__item:nth-child(4) a').removeClass('current');
-                $('.sectionNav__item:nth-child(1) a').addClass('current');
-            } else if(scroll >= $('#section--no2').offset().top && scroll < $('#section--no3').offset().top ){
-                $('.sectionNav__item:nth-child(1) a').removeClass('current');
-                $('.sectionNav__item:nth-child(3) a').removeClass('current');
-                $('.sectionNav__item:nth-child(4) a').removeClass('current');
-                $('.sectionNav__item:nth-child(2) a').addClass('current');
-            } else if(scroll >= $('#section--no3').offset().top && scroll < $('#section--no4').offset().top ){
-                $('.sectionNav__item:nth-child(1) a').removeClass('current');
-                $('.sectionNav__item:nth-child(2) a').removeClass('current');
-                $('.sectionNav__item:nth-child(4) a').removeClass('current');
-                $('.sectionNav__item:nth-child(3) a').addClass('current');
-            } else if(scroll >= $('#section--no4').offset().top){
-                $('.sectionNav__item:nth-child(1) a').removeClass('current');
-                $('.sectionNav__item:nth-child(2) a').removeClass('current');
-                $('.sectionNav__item:nth-child(3) a').removeClass('current');
-                $('.sectionNav__item:nth-child(4) a').addClass('current');
-            } else {
-                $('.sectionNav__item:nth-child(1) a').removeClass('current');
-                $('.sectionNav__item:nth-child(2) a').removeClass('current');
-                $('.sectionNav__item:nth-child(3) a').removeClass('current');
-                $('.sectionNav__item:nth-child(4) a').removeClass('current');
+            let scroll = $(window).scrollTop();
+            let section = $('.sectionWrapper section');
+            let i;
+            let navItem = $('.sectionNav__item');
+
+            for (i=0; i < section.length; i++){
+
+                let currentSection = section.eq(i);
+                let sectionOffset_top = currentSection.offset().top;
+                let sectionHeight = currentSection.height();
+
+                if ( scroll >= sectionOffset_top && scroll < (sectionOffset_top + sectionHeight) ){
+                    break;
+                }
+
             }
+            navItem.removeClass('current');
+            navItem.eq(i).addClass('current');
 
         });
 
+        //trigger the scroll - current position when page is refreshed
+        $(window).scroll();
+
     sectionLink.on('click', function(){
-        var l=$($(this).attr('href')).offset().top;
-        $('body, html').stop().animate({scrollTop:l}, 500);
+        scrollTo($($(this).attr('href')), 500);
         return false;
     });
 
     // Jump to top - mobilFooter
     $('.mobilFooter__item--jumpTo').on('click', function(){
-        var l=$($(this).attr('href')).offset().top;
-        $('body, html').stop().animate({scrollTop:l}, 500);
+        scrollTo($($(this).attr('href')), 500);
         return false;
     });
 
@@ -88,8 +85,7 @@ $(document).ready(function(){
 
     // Trigger on click
     btn_jumpTo_top.on('click', function(){
-        var l=$($(this).attr('href')).offset().top;
-        $('body, html').stop().animate({scrollTop:l}, 500);
+        scrollTo($($(this).attr('href')), 500);
         return false;
     });
 
