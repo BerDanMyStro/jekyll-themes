@@ -126,6 +126,27 @@
                         @include transform(rotate, 180deg);
                     }
                 }
+                & + .sectionTitle{
+                    @include mq($notebook-s){
+                        @include flex(flex-end, center);
+                        @include flexWidth(150px);
+                    }
+                }
+            }
+        }
+        .sectionTitle{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: -166px;
+            height: 24px;
+            font-size: 12px;
+            span{
+                padding: 8px;
+                border-radius: $base-radius;
+                background: $flat-color_10;
+                color: white;
+                font-weight: 300;
             }
         }
     }
