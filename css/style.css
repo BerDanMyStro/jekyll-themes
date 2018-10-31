@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext");
-body { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; }
-body .stickyWrapper { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: flex-start; flex: 1 1 auto; flex-flow: column wrap; width: 100%; min-height: 100vh; margin: 0; padding: 0; }
+body { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: stretch; flex-direction: column; }
+body .stickyWrapper { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: stretch; flex: 1 1 auto; flex-flow: column wrap; width: 100%; min-height: 100vh; margin: 0; padding: 0; }
 body .stickyWrapper .pageWrapper { flex: 1 1 auto; width: 100%; }
 
 * { position: relative; box-sizing: border-box; -moz-box-sizing: border-box; }
@@ -80,7 +80,7 @@ header { display: -ms-flexbox; display: flex; justify-content: center; align-ite
 
 .header__seoWrapper { position: absolute; width: 1px; height: 1px; overflow: hidden; text-indent: 100%; white-space: nowrap; }
 
-.mobilFooter { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; margin-bottom: 24px; }
+.mobilFooter { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: stretch; flex-direction: column; margin-bottom: 24px; }
 .mobilFooter .mobilFooter__item, .mobilFooter .mobilFooter__item--jumpTo { display: -ms-flexbox; display: flex; justify-content: center; align-items: center; width: 100%; max-width: 100%; flex-basis: 100%; height: 36px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: white; text-align: center; }
 .mobilFooter__item--jumpTo svg { width: 28px; height: auto; fill: white; }
 @media only screen and (min-width: 1024px) { .mobilFooter { display: none; } }
