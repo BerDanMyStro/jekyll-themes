@@ -10,16 +10,14 @@ function scrollTo(target, speed) {
 
 // Circle cursor
 $(document).mousemove(function(e) {
-    $('.circleCursor').eq(0).css({
-        left: e.pageX,
-        top: e.pageY
-    });
+
     setTimeout(function() {
-        $('.circleCursor').eq(1).css({
+        $('.customCursor').css({
             left: e.pageX,
             top: e.pageY
         });
-    }, 75);
+    }, 100);
+
 });
 
 
