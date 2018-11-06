@@ -1,6 +1,7 @@
 // >> Base Layout --- >
 @import "./partial/header";
 @import "./partial/footer";
+@import "./partial/cursor";
 
 body{
     @extend %stickyFooter;

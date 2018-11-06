@@ -1,0 +1,35 @@
+// >> Circle Cursor Style --- >
+
+*{
+    //cursor: none;
+    &:hover{
+        //cursor: none;
+    }
+}
+
+.circlePointer{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    content: "";
+    border-radius: 50%;
+    background: w(0.5);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.circleCursor {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 3px solid c($flat-color_10, 0.5);
+    content: "";
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10000;
+    pointer-events: none;
+}

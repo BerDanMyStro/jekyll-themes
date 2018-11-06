@@ -8,7 +8,26 @@ function scrollTo(target, speed) {
     }
 }
 
+// Circle cursor
+$(document).mousemove(function(e) {
+
+    $('.circlePointer').css({
+        left: e.pageX,
+        top: e.pageY
+    });
+
+    setTimeout(function() {
+        $('.circleCursor').css({
+            left: e.pageX,
+            top: e.pageY
+        });
+    }, 75);
+
+});
+
+
 $(document).ready(function(){
+
     // Left Side Menu
     $('.btn--toggleMenu').on('click', function(){
         $(this).toggleClass('open');
