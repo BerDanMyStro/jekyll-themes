@@ -25,7 +25,6 @@ $(document).mousemove(function(e) {
 
 });
 
-
 $(document).ready(function(){
 
     // Left Side Menu

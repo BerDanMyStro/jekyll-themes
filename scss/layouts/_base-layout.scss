@@ -5,7 +5,7 @@
 
 body{
     @extend %stickyFooter;
-    background: url(../images/skulls.png);
+    background: url("../images/skulls.png");
     font-family: #{$base-fontFamily};
 }
 .pageWrapper{

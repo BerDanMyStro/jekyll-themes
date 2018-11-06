@@ -92,7 +92,7 @@ footer { width: 100%; background: #2c3e50; padding: 0; }
 
 .circleCursor { position: absolute; top: -50%; left: -50%; display: block; width: 36px; height: 36px; border-radius: 50%; border: 3px solid rgba(44, 62, 80, 0.5); content: ""; transform: translateX(-50%) translateY(-50%); z-index: 10000; pointer-events: none; }
 
-body { background: url(../images/skulls.png); font-family: 'Poppins', sans-serif; }
+body { background: url("../images/skulls.png"); font-family: 'Poppins', sans-serif; }
 
 .pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; position: static; width: 100%; padding: 40px 0 60px 0; }
 
