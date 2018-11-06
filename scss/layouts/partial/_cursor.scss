@@ -1,11 +1,21 @@
 // >> Circle Cursor Style --- >
 
-.customCursor{
-    height: 36px;
-    width: 36px;
+*{
+    //cursor: none;
+    &:hover{
+        //cursor: none;
+    }
+}
+
+.circlePointer{
     position: absolute;
-    //transform: translateX(-50%) translateY(-50%);
-    z-index: 100000;
+    width: 8px;
+    height: 8px;
+    content: "";
+    border-radius: 50%;
+    background: w(0.5);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10000;
     pointer-events: none;
 }
 
@@ -14,10 +24,12 @@
     top: -50%;
     left: -50%;
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    border: 3px solid w(0.8);
+    border: 3px solid c($flat-color_10, 0.5);
     content: "";
-
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10000;
+    pointer-events: none;
 }
