@@ -21,8 +21,15 @@ $(document).mousemove(function(e) {
             left: e.pageX,
             top: e.pageY
         });
-    }, 75);
+    }, 100);
 
+});
+
+$(document).ready(function(e){
+    $('.circlePointer').css({
+        left: e.pageX,
+        top: e.pageY
+    });
 });
 
 $(document).ready(function(){
@@ -44,7 +51,6 @@ $(document).ready(function(){
     // >> Section Menu
     let navItem = $('.sectionNav__item');
     let sectionLink = $('.sectionNav__item a');
-
 
         // Create elements
         sectionLink.each(function(){
@@ -75,8 +81,6 @@ $(document).ready(function(){
 
         });
 
-
-
         // Trigger the scroll - current position when page is refreshed
         $(window).scroll();
 
@@ -84,9 +88,6 @@ $(document).ready(function(){
         scrollTo($($(this).attr('href')), 500);
         return false;
     });
-
-
-
 
     // Jump to top - mobilFooter
     $('.mobilFooter__item--jumpTo').on('click', function(){
@@ -159,6 +160,11 @@ $(document).ready(function(){
             $('#last_name').after('<div class="error">This field is required!</div>');
         }
 
+    });
+
+    // Cursor hover
+    $('a, button, *[class^="btn--"]').hover(function () {
+        $('.circleCursor').toggleClass('hover');
     });
 
 });

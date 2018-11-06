@@ -1,9 +1,9 @@
 // >> Circle Cursor Style --- >
 
 *{
-    //cursor: none;
+    cursor: none;
     &:hover{
-        //cursor: none;
+      cursor: none;
     }
 }
 
@@ -13,13 +13,15 @@
     height: 8px;
     content: "";
     border-radius: 50%;
-    background: w(0.5);
+    background: c($flat-color_10, 0.75);
     transform: translateX(-50%) translateY(-50%);
-    z-index: 10000;
+    z-index: 10001;
     pointer-events: none;
 }
 
 .circleCursor {
+    @include transition(width, ease-in-out, 0.05s);
+    @include transition(height, ease-in-out, 0.05s);
     position: absolute;
     top: -50%;
     left: -50%;
@@ -28,8 +30,13 @@
     height: 36px;
     border-radius: 50%;
     border: 3px solid c($flat-color_10, 0.5);
+    background: w(0.25);
     content: "";
     transform: translateX(-50%) translateY(-50%);
-    z-index: 10000;
     pointer-events: none;
+    z-index: 10000;
+    &.hover{
+        width: 48px;
+        height: 48px;
+    }
 }
