@@ -1,0 +1,42 @@
+// >> Parallax Header Style --- >
+
+.parallaxHeader{
+    width: 100%;
+    padding-bottom: percentage(600/1440);
+    margin: 0 auto 40px;
+    background: url("../images/parallax-bg.jpg") no-repeat top center / 1440px 800px;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.parallaxHeader__logo{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10.5%;
+    bottom: 0;
+    width: percentage(370/1440);
+    height: 0;
+    margin: 0 auto;
+    padding-bottom: percentage(97/1440); // - Logo height / Parent Width
+    background: url("../images/parallax-logo.png") no-repeat center center / contain;
+}
+.parallaxHeader__tire{
+    position: absolute;
+    right: 30%;
+    bottom: 0;
+    width: percentage(361/1440);
+    height: 0;
+    margin: 0 auto;
+    padding-bottom: percentage(247/1440); // - Logo height / Parent Width
+    background: url("../images/parallax-tire.png") no-repeat center top / contain;
+}
+.parallaxHeader__jump{
+    position: absolute;
+    right: 27.5%;
+    bottom: 25%;
+    width: percentage(270/1440);
+    height: 0;
+    margin: 0 auto;
+    padding-bottom: percentage(341/1440); // - Logo height / Parent Width
+    background: url("../images/parallax-jump.png") no-repeat center top / contain;
+}

@@ -212,6 +212,14 @@ nav h3.pageSubtitle:after { height: 1px; }
 
 .grid-12 { width: 100%; max-width: 100%; flex-basis: 100%; }
 
+.parallaxHeader { width: 100%; padding-bottom: 41.66667%; margin: 0 auto 40px; background: url("../images/parallax-bg.jpg") no-repeat top center/1440px 800px; background-attachment: fixed; overflow: hidden; }
+
+.parallaxHeader__logo { position: absolute; left: 0; right: 0; top: 10.5%; bottom: 0; width: 25.69444%; height: 0; margin: 0 auto; padding-bottom: 6.73611%; background: url("../images/parallax-logo.png") no-repeat center center/contain; }
+
+.parallaxHeader__tire { position: absolute; right: 30%; bottom: 0; width: 25.06944%; height: 0; margin: 0 auto; padding-bottom: 17.15278%; background: url("../images/parallax-tire.png") no-repeat center top/contain; }
+
+.parallaxHeader__jump { position: absolute; right: 27.5%; bottom: 25%; width: 18.75%; height: 0; margin: 0 auto; padding-bottom: 23.68056%; background: url("../images/parallax-jump.png") no-repeat center top/contain; }
+
 .madeBy { width: 100%; margin-bottom: 24px; color: white; font-size: 0.6875rem; text-align: center; }
 @media only screen and (min-width: 1024px) { .madeBy { margin-bottom: 0; } }
 

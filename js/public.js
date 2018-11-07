@@ -25,13 +25,6 @@ $(document).mousemove(function(e) {
 
 });
 
-$(document).ready(function(e){
-    $('.circlePointer').css({
-        left: e.pageX,
-        top: e.pageY
-    });
-});
-
 $(document).ready(function(){
 
     // Left Side Menu
@@ -165,6 +158,25 @@ $(document).ready(function(){
     // Cursor hover
     $('a, button, *[class^="btn--"]').hover(function () {
         $('.circleCursor').toggleClass('hover');
+    });
+
+    // Parallax Header
+    $(window).scroll(function () {
+
+        let scroll = $(this).scrollTop();
+
+        $('.parallaxHeader__logo').css({
+            'transform': 'translate(0px, '+ scroll /2 +'%)'
+        });
+
+        $('.parallaxHeader__tire').css({
+            'transform': 'translate(0px, '+ scroll /20 +'%)'
+        });
+
+        $('.parallaxHeader__jump').css({
+            'transform': 'translate(0px, -'+ scroll /60 +'%)'
+        });
+
     });
 
 });
