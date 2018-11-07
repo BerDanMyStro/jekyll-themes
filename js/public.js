@@ -174,7 +174,7 @@ $(document).ready(function(){
         });
 
         $('.parallaxHeader__jump').css({
-            'transform': 'translate(0px, -'+ scroll /60 +'%)'
+            'transform': 'translate(-'+ scroll /10 +'px, -'+ scroll /60 +'%)'
         });
 
     });
