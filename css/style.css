@@ -218,7 +218,33 @@ nav h3.pageSubtitle:after { height: 1px; }
 
 .parallaxHeader__tire { position: absolute; right: 30%; bottom: 0; width: 25.06944%; height: 0; margin: 0 auto; padding-bottom: 17.15278%; background: url("../images/parallax-tire.png") no-repeat center top/contain; }
 
-.parallaxHeader__jump { position: absolute; right: 27.5%; bottom: 25%; width: 18.75%; height: 0; margin: 0 auto; padding-bottom: 23.68056%; background: url("../images/parallax-jump.png") no-repeat center top/contain; }
+.parallaxHeader__jump { position: absolute; right: 25.5%; bottom: 25%; width: 18.75%; height: 0; margin: 0 auto; padding-bottom: 23.68056%; background: url("../images/parallax-jump.png") no-repeat center top/contain; }
+
+.responsiveTable--collapse--col3, .responsiveTable--scroll--col3 { margin: 16px auto; background: rgba(0, 0, 0, 0.1); }
+.responsiveTable--collapse--col3:after, .responsiveTable--scroll--col3:after { display: block; width: 0; height: 0; clear: both; font-size: 0; line-height: 0; visibility: hidden; content: ' '; }
+@media only screen and (min-width: 756px) { .responsiveTable--collapse--col3, .responsiveTable--scroll--col3 { padding: 24px; } }
+.responsiveTable--collapse--col3 table, .responsiveTable--scroll--col3 table { width: 100%; }
+.responsiveTable--collapse--col3 table thead, .responsiveTable--scroll--col3 table thead { background: rgba(255, 255, 255, 0.5); }
+.responsiveTable--collapse--col3 table thead tr td, .responsiveTable--scroll--col3 table thead tr td, .responsiveTable--collapse--col3 table thead tr th, .responsiveTable--scroll--col3 table thead tr th { padding: 16px; border-bottom: 2px solid rgba(0, 0, 0, 0.175); text-align: left; }
+.responsiveTable--collapse--col3 table tbody, .responsiveTable--scroll--col3 table tbody { background: rgba(255, 255, 255, 0.75); }
+.responsiveTable--collapse--col3 table tbody tr:last-child td, .responsiveTable--scroll--col3 table tbody tr:last-child td, .responsiveTable--collapse--col3 table tbody tr:last-child th, .responsiveTable--scroll--col3 table tbody tr:last-child th { border-bottom: none; }
+
+.responsiveTable--collapse--col3 table thead { display: none; }
+@media only screen and (min-width: 756px) { .responsiveTable--collapse--col3 table thead { display: table-header-group; } }
+.responsiveTable--collapse--col3 table tbody tr:last-child td:last-child { border-bottom: none; }
+.responsiveTable--collapse--col3 table tbody tr td, .responsiveTable--collapse--col3 table tbody tr th { display: block; width: 100%; padding: 16px 16px 0; vertical-align: middle; }
+.responsiveTable--collapse--col3 table tbody tr td:last-child, .responsiveTable--collapse--col3 table tbody tr th:last-child { padding: 16px; }
+@media only screen and (min-width: 756px) { .responsiveTable--collapse--col3 table tbody tr td, .responsiveTable--collapse--col3 table tbody tr th { display: table-cell; width: 33.3333%; padding: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.175); } }
+.responsiveTable--collapse--col3 table tbody tr td:last-child { border-bottom: 1px solid rgba(0, 0, 0, 0.175); }
+.responsiveTable--collapse--col3 table tbody tr td:before { display: block; width: 100%; content: attr(data-label) ":"; font-weight: bold; }
+@media only screen and (min-width: 756px) { .responsiveTable--collapse--col3 table tbody tr td:before { display: none; } }
+
+.responsiveTable--scroll--col3 { padding: 24px 0; overflow-x: auto; }
+@media only screen and (min-width: 756px) { .responsiveTable--scroll--col3 { padding: 24px; } }
+.responsiveTable--scroll--col3 table { min-width: 680px; }
+.responsiveTable--scroll--col3 table:after { display: block; width: 100%; margin-top: 24px; padding-left: 48px; background: url("../images/icon-swipe.svg") no-repeat left 24px bottom 2px/20px; text-align: left; content: "Swipe"; }
+@media only screen and (min-width: 756px) { .responsiveTable--scroll--col3 table:after { display: none; } }
+.responsiveTable--scroll--col3 table tbody tr td, .responsiveTable--scroll--col3 table tbody tr th { width: 33.3333%; padding: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.175); vertical-align: middle; }
 
 .madeBy { width: 100%; margin-bottom: 24px; color: white; font-size: 0.6875rem; text-align: center; }
 @media only screen and (min-width: 1024px) { .madeBy { margin-bottom: 0; } }

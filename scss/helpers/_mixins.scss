@@ -26,6 +26,20 @@
     }
 }
 
+// ClearFix
+@mixin clearFix{
+    &:after{
+        display: block;
+        width: 0;
+        height: 0;
+        clear: both;
+        font-size: 0;
+        line-height: 0;
+        visibility: hidden;
+        content:' ';
+    }
+}
+
 // Apparens None - browser fix
 @mixin appearencNone{
     -webkit-appearance:none;

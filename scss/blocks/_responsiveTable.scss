@@ -1,0 +1,112 @@
+// >> Parallax Header Style --- >
+
+%responsiveTable{
+    @include clearFix;
+    margin: 16px auto;
+    background: b(0.1);
+    @include mq($ipad-port){
+        padding: 24px;
+    }
+    table{
+        width: 100%;
+        thead{
+            background: w(0.5);
+            tr{
+                td, th{
+                    padding: 16px;
+                    border-bottom: 2px solid b(0.175);
+                    text-align: left;
+                }
+            }
+        }
+        tbody{
+            background: w(0.75);
+            tr{
+                &:last-child{
+                    td, th{
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// >> Table Collapse Style
+.responsiveTable--collapse--col3{
+    @extend %responsiveTable;
+    table{
+        thead{
+            display: none;
+            @include mq($ipad-port){
+                display: table-header-group;
+            }
+        }
+        tbody tr{
+            &:last-child td:last-child{
+                border-bottom: none;
+            }
+            td,th{
+                display: block;
+                width: 100%;
+                padding: 16px 16px 0;
+                vertical-align: middle;
+                &:last-child{
+                    padding: 16px;
+                }
+                @include mq($ipad-port){
+                    display: table-cell;
+                    width: 33.3333%;
+                    padding: 16px;
+                    border-bottom: 1px solid b(0.175);
+                }
+            }
+            td{
+                &:last-child{
+                    border-bottom: 1px solid b(0.175);
+                }
+                &:before{
+                    display: block;
+                    width: 100%;
+                    content: attr(data-label)":";
+                    font-weight: bold;
+                    @include mq($ipad-port){
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+// >> Scrollable Table Style
+.responsiveTable--scroll--col3{
+    @extend %responsiveTable;
+    padding: 24px 0;
+    overflow-x: auto;
+    @include mq($ipad-port){
+        padding: 24px;
+    }
+    table{
+        min-width: 680px;
+        &:after{
+            display: block;
+            width: 100%;
+            margin-top: 24px;
+            padding-left: 48px;
+            background: url("../images/icon-swipe.svg") no-repeat left 24px bottom 2px / 20px;
+            text-align: left;
+            content: "Swipe";
+            @include mq($ipad-port){
+                display: none;
+            }
+        }
+        tbody tr{
+            td,th{
+                width: 33.3333%;
+                padding: 16px;
+                border-bottom: 1px solid b(0.175);
+                vertical-align: middle;
+            }
+        }
+    }
+}

@@ -179,4 +179,26 @@ $(document).ready(function(){
 
     });
 
+    // Lorem Text Generator
+    $('.sample-1').looreem({'wC':50, 'isHTML':true, 'langSel':arrayHU});
+    // $('#sample-2').looreem({'genType':'p','pC':2,'sPP':5,'wPPS':25,'isHTML':true,'langSel':arrayHU});
+    $('.sample-3').looreem({'genType':'p','pC':5,'sPP':5,'wPPS':20,'isHTML':true,'langSel':arrayHU});
+    $('.sample-4').looreem({'genType':'l','lC':5,'wPLI':20,'isHTML':true,'langSel':arrayHU});
+
+        /* >> Option
+        --- --- --- --- --- --- --- ---
+
+        "isHTML": false, // true or false | add html tags such as &lt;p&gt;, &lt;ul&gt;&lt;li&gt; to the generated content
+        "hasFont": false, // false or string | if isHTML is true and hasFont is not false, add style='font-family:hasFont' string to &lt;p&gt; or &lt;ul&gt; tags
+        "genType": undefined, // w, p, s | specify generated content type. w is word, p is paragraph, l is list
+        "langSel": arrayHU, // array names specified earlier, works with any custom one dimensional array also
+        "wC":0, // positive integer, if genType is w, this will specify the number of words (array elements) to generate
+        "pC":0, // positive integer, if genType is p, this will specify the number of paragraphs to generate
+        "sPP":0, // positive integer, if genType is p, this will specify the number of sentences in one paragraph
+        "wPPS":0, // positive integer, if genType is p, this will specify the number of words (array elements) to generate for one sentence
+        "lC":0, // positive integer, if genType is l, this will specify the number of list elements to generate
+        "wPLI":0 // positive integer, if genType is l, this will specify the number of words (array elements) to generate for one list element
+
+        --- --- --- --- --- --- --- --- */
+
 });
