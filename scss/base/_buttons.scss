@@ -10,6 +10,9 @@
     border-bottom: 2px solid $flat-color_10;
     background: $flat-color_8;
     z-index: 101;
+    @include mq($ipad-land){
+        display: none;
+    }
     &.open{
         span:nth-child(1) {
             width: 0;
@@ -56,8 +59,8 @@
 }
 .btn--openSub{
     position: absolute;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     top: 0;
     right: 0;
     background: w(0.1);
@@ -96,14 +99,14 @@
         background: $base-fontColor;
         opacity: 1;
         &:nth-child(1) {
-            top: 10px;
+            top: 12px;
         }
         &:nth-child(2),
         &:nth-child(3) {
-            top: 17px;
+            top: 19px;
         }
         &:nth-child(4) {
-            top: 24px;
+            top: 26px;
         }
     }
 }

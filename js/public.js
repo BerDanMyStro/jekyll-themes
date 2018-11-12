@@ -9,7 +9,7 @@ function scrollTo(target, speed) {
 }
 
 // Circle cursor
-$(document).mousemove(function(e) {
+/*$(document).mousemove(function(e) {
 
     $('.circlePointer').css({
         left: e.pageX,
@@ -23,11 +23,26 @@ $(document).mousemove(function(e) {
         });
     }, 100);
 
-});
+});*/
 
 $(document).ready(function(){
 
-    // Left Side Menu
+    // Header Menu
+    $('.btn--toggleMenu').on('click', function(){
+        $(this).toggleClass('open');
+        $(this).prev('nav').slideToggle();
+    });
+    $('.btn--openSub').on('click', function(){
+        $(this).toggleClass('open');
+        $(this).next('.toggleSubmenu').slideToggle();
+    });
+    if ($(window).width() > 1024){
+        $('.hasSub').hover(function () {
+            $(this).children('.toggleSubmenu').toggleClass('hover');
+        });
+    }
+
+    /*// Left Side Menu
     $('.btn--toggleMenu').on('click', function(){
         $(this).toggleClass('open');
         $('nav').toggleClass('open');
@@ -35,7 +50,7 @@ $(document).ready(function(){
     $('.btn--openSub').on('click', function(){
         $(this).toggleClass('open');
         $(this).next('.toggleSubmenu').slideToggle();
-    });
+    });*/
 
     // >> Left Side Menu Title
     let pageTitle = $('h2.pageTitle');

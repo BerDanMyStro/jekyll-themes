@@ -18,6 +18,7 @@
             		<a href="index.html" class="header__logo">
             			{% include header__seoWrapper.html %}
             		</a>
+					{% include nav--header.html %}
 					<button type="button" name="toggleMenu" class="btn--toggleMenu">
 						<span></span>
 						<span></span>
@@ -28,7 +29,6 @@
             </header>
 			<div class="pageWrapper">
 				<div class="contentWrapper">
-					{% include nav.html %}
             		{{content}}
 				</div>
 				<a href="#jumpHere" class="jumpTo-top">
@@ -40,8 +40,8 @@
 				{% include footer__madeBy.html %}
 			</footer>
         </div>
-		<div class="circlePointer"></div>
-		<div class="circleCursor"></div>
+		<!--<div class="circlePointer"></div>
+		<div class="circleCursor"></div>-->
 		<!--JS import-->
 		<script src="{{site.baseurl}}/js/jquery-3.3.1.min.js" defer></script>
 		<script type="text/javascript" src="{{site.baseurl}}/js/words.js" defer></script>

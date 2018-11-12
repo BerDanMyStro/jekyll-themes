@@ -1,0 +1,98 @@
+// >> Header Menu Style --- >
+.headerWrapper{
+    position: static;
+}
+nav.nav--header{
+    // Mobil Style
+    @include mq-max($max--ipad-land){
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        z-index: 100;
+        .toggleMenu{
+            // toggleMenu__item a
+            %menuLink{
+                display: block;
+                padding: 12px 8px;
+            }
+            @include e(item){
+                a{
+                    @extend %menuLink;
+                    color: $base-fontColor;
+                }
+                @include m(active){
+                    background: $flat-color_8;
+                    a{
+                        @extend %menuLink;
+                        color: white;
+                    }
+                    .btn--openSub span{
+                        background: white;
+                    }
+                }
+            }
+            .toggleSubmenu{
+                display: none;
+                background: white;
+                @include e(item){
+                    a{
+                        @extend %menuLink;
+                        color: $base-fontColor;
+                    }
+                    @include m(active){
+                        background: $flat-color_8;
+                        a{
+                            @extend %menuLink;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // PC Style
+    @include mq($ipad-land){
+        display: block !important;
+        overflow: visible !important;
+        .toggleMenu{
+            // toggleMenu__item a
+            %menuLink-PC{
+                display: block;
+                padding: 12px 8px;
+            }
+            @include flex(flex-end);
+            @include e(item){
+                a{
+                    @extend %menuLink-PC;
+                    color: $base-fontColor;
+                    &:hover{
+                        color: $flat-color_8;
+                    }
+                }
+                @include m(active){
+                    a{
+                        @extend %menuLink-PC;
+                        color: $flat-color_8;
+                    }
+                }
+            }
+            .toggleSubmenu{
+                display: none;
+                position: absolute;
+                width: 100%;
+                &.hover{
+                    display: block;
+                    z-index: 101;
+                }
+            }
+            .hasSub{
+                .btn--openSub{
+                    display: none;
+                }
+            }
+        }
+    }
+}
