@@ -246,6 +246,13 @@ nav h3.pageSubtitle:after { height: 1px; }
 @media only screen and (min-width: 756px) { .responsiveTable--scroll--col3 table:after { display: none; } }
 .responsiveTable--scroll--col3 table tbody tr td, .responsiveTable--scroll--col3 table tbody tr th { width: 33.3333%; padding: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.175); vertical-align: middle; }
 
+.scrollingSections { position: static; }
+.scrollingSections section { position: relative; height: 100vh; }
+.scrollingSections section.scrolling .sectionContent { position: absolute; }
+.scrollingSections section .sectionTrigger { position: absolute; top: -10vh; }
+.scrollingSections section .sectionContent { position: relative; top: 0; left: 0; width: 100%; height: 100vh; overflow: hidden; background: black; }
+.scrollingSections section .sectionContent__inner { position: relative; height: 100vh; opacity: 0; }
+
 .madeBy { width: 100%; margin-bottom: 24px; color: white; font-size: 0.6875rem; text-align: center; }
 @media only screen and (min-width: 1024px) { .madeBy { margin-bottom: 0; } }
 

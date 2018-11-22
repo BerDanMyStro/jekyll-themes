@@ -1,0 +1,32 @@
+// >> Scrolling Sections Style --- >
+
+.scrollingSections{
+    position: static;
+    section{
+        position: relative;
+        height: 100vh;
+        &.scrolling{
+            .sectionContent{
+                position: absolute;
+            }
+        }
+        .sectionTrigger{
+            position: absolute;
+            top: -10vh;
+        }
+        .sectionContent{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: black;
+        }
+        .sectionContent__inner{
+            position: relative;
+            height: 100vh;
+            opacity: 0;
+        }
+    }
+}

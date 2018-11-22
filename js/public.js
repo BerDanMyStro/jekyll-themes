@@ -201,4 +201,40 @@ $(document).ready(function(){
 
         --- --- --- --- --- --- --- --- */
 
+    // Scrolling Sections
+    let section = $('.scrollingSections section');
+    let max_index = section.length;
+
+    section.each(function () {
+
+        // Inverse z-index
+        $(this).children('.sectionContent').css({
+           'z-index': max_index--
+        });
+
+    });
+
+
+    $(window).scroll(function () {
+
+        let scroll = $(window).scrollTop();
+        let i;
+
+        for (i=0; i < section.length; i++){
+
+            let currentSection = section.eq(i);
+            let sectionOffset_top = currentSection.offset().top;
+            let sectionHeight = currentSection.height();
+
+            if ( scroll >= sectionOffset_top && scroll < (sectionOffset_top + sectionHeight) ){
+                break;
+            }
+
+        }
+        //section.removeClass('scrolling');
+        section.eq(i).addClass('scrolling');
+
+
+    });
+
 });
