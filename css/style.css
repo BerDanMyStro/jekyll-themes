@@ -212,13 +212,13 @@ nav h3.pageSubtitle:after { height: 1px; }
 
 .grid-12 { width: 100%; max-width: 100%; flex-basis: 100%; }
 
-.parallaxHeader { width: 100%; padding-bottom: 41.66667%; margin: 0 auto 40px; background: url("../images/parallax-bg.jpg") no-repeat top center/1440px 800px; background-attachment: fixed; overflow: hidden; }
+.parallaxHeader { width: 100%; padding-bottom: 41.6666666667%; margin: 0 auto 40px; background: url("../images/parallax-bg.jpg") no-repeat top center/1440px 800px; background-attachment: fixed; overflow: hidden; }
 
-.parallaxHeader__logo { position: absolute; left: 0; right: 0; top: 10.5%; bottom: 0; width: 25.69444%; height: 0; margin: 0 auto; padding-bottom: 6.73611%; background: url("../images/parallax-logo.png") no-repeat center center/contain; }
+.parallaxHeader__logo { position: absolute; left: 0; right: 0; top: 10.5%; bottom: 0; width: 25.6944444444%; height: 0; margin: 0 auto; padding-bottom: 6.7361111111%; background: url("../images/parallax-logo.png") no-repeat center center/contain; }
 
-.parallaxHeader__tire { position: absolute; right: 30%; bottom: 0; width: 25.06944%; height: 0; margin: 0 auto; padding-bottom: 17.15278%; background: url("../images/parallax-tire.png") no-repeat center top/contain; }
+.parallaxHeader__tire { position: absolute; right: 30%; bottom: 0; width: 25.0694444444%; height: 0; margin: 0 auto; padding-bottom: 17.1527777778%; background: url("../images/parallax-tire.png") no-repeat center top/contain; }
 
-.parallaxHeader__jump { position: absolute; right: 25.5%; bottom: 25%; width: 18.75%; height: 0; margin: 0 auto; padding-bottom: 23.68056%; background: url("../images/parallax-jump.png") no-repeat center top/contain; }
+.parallaxHeader__jump { position: absolute; right: 25.5%; bottom: 25%; width: 18.75%; height: 0; margin: 0 auto; padding-bottom: 23.6805555556%; background: url("../images/parallax-jump.png") no-repeat center top/contain; }
 
 .responsiveTable--collapse--col3, .responsiveTable--scroll--col3 { margin: 16px auto; background: rgba(0, 0, 0, 0.1); }
 .responsiveTable--collapse--col3:after, .responsiveTable--scroll--col3:after { display: block; width: 0; height: 0; clear: both; font-size: 0; line-height: 0; visibility: hidden; content: ' '; }
@@ -246,11 +246,15 @@ nav h3.pageSubtitle:after { height: 1px; }
 @media only screen and (min-width: 756px) { .responsiveTable--scroll--col3 table:after { display: none; } }
 .responsiveTable--scroll--col3 table tbody tr td, .responsiveTable--scroll--col3 table tbody tr th { width: 33.3333%; padding: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.175); vertical-align: middle; }
 
-.scrollingSections { position: static; }
-.scrollingSections section { position: relative; height: 100vh; }
-.scrollingSections section.scrolling .sectionContent { position: absolute; }
-.scrollingSections section .sectionTrigger { position: absolute; top: -10vh; }
-.scrollingSections section .sectionContent { position: relative; top: 0; left: 0; width: 100%; height: 100vh; overflow: hidden; background: black; }
+.pageWrapper.scrollingContent { padding: 0; }
+
+.scrollingSections section { position: static; height: 100vh; }
+.scrollingSections section:first-child { position: relative; }
+.scrollingSections section:first-child .sectionContent__inner { opacity: 1; }
+.scrollingSections section:first-child .sectionContent { position: relative; }
+.scrollingSections section.scrolling .sectionContent { position: relative; }
+.scrollingSections section .sectionTrigger { position: absolute; top: 0; left: 0; width: 100%; height: 1px; content: ""; z-index: -1; }
+.scrollingSections section .sectionContent { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; overflow: hidden; background: black; }
 .scrollingSections section .sectionContent__inner { position: relative; height: 100vh; opacity: 0; }
 
 .madeBy { width: 100%; margin-bottom: 24px; color: white; font-size: 0.6875rem; text-align: center; }

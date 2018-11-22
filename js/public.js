@@ -37,7 +37,7 @@ $(document).ready(function(){
         $(this).next('.toggleSubmenu').slideToggle();
     });
 
-    // >> Left Side Menu Title
+    /*// >> Left Side Menu Title
     let pageTitle = $('h2.pageTitle');
     $('.nav--leftSide h3').text(pageTitle[0].textContent);
 
@@ -80,7 +80,7 @@ $(document).ready(function(){
     sectionLink.on('click', function(){
         scrollTo($($(this).attr('href')), 500);
         return false;
-    });
+    });*/
 
     // Jump to top - mobilFooter
     $('.mobilFooter__item--jumpTo').on('click', function(){
@@ -220,6 +220,33 @@ $(document).ready(function(){
         let scroll = $(window).scrollTop();
         let i;
 
+        //console.log(scroll);
+
+        for (i=0; i < section.length; i++){
+
+            let currentSection = section.eq(i);
+            let sectionOffset_top = currentSection.offset().top;
+            let sectionHeight = currentSection.height();
+
+            if ( scroll >= sectionOffset_top ){
+
+                let elementScroll = scroll - sectionOffset_top;
+                let opacity = elementScroll / sectionHeight + 0.1;
+
+                currentSection.next('section').children('.sectionContent').children('.sectionContent__inner').css({
+                    'opacity': opacity
+                });
+
+            }
+
+            /*if ( scroll < sectionTrigger_Offset_top){
+
+
+
+            }*/
+
+        }
+
         for (i=0; i < section.length; i++){
 
             let currentSection = section.eq(i);
@@ -227,13 +254,11 @@ $(document).ready(function(){
             let sectionHeight = currentSection.height();
 
             if ( scroll >= sectionOffset_top && scroll < (sectionOffset_top + sectionHeight) ){
-                break;
+             break;
             }
 
         }
-        //section.removeClass('scrolling');
         section.eq(i).addClass('scrolling');
-
 
     });
 
