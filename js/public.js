@@ -220,8 +220,6 @@ $(document).ready(function(){
         let scroll = $(window).scrollTop();
         let i;
 
-        //console.log(scroll);
-
         for (i=0; i < section.length; i++){
 
             let currentSection = section.eq(i);
@@ -231,7 +229,7 @@ $(document).ready(function(){
             if ( scroll >= sectionOffset_top ){
 
                 let elementScroll = scroll - sectionOffset_top;
-                let opacity = elementScroll / sectionHeight + 0.1;
+                let opacity = elementScroll / sectionHeight + 0.15;
 
                 currentSection.next('section').children('.sectionContent').children('.sectionContent__inner').css({
                     'opacity': opacity
@@ -239,27 +237,16 @@ $(document).ready(function(){
 
             }
 
-            /*if ( scroll < sectionTrigger_Offset_top){
-
-
-
-            }*/
-
-        }
-
-        for (i=0; i < section.length; i++){
-
-            let currentSection = section.eq(i);
-            let sectionOffset_top = currentSection.offset().top;
-            let sectionHeight = currentSection.height();
-
             if ( scroll >= sectionOffset_top && scroll < (sectionOffset_top + sectionHeight) ){
-             break;
+                section.eq(i).addClass('scrolling');
+            } else if ( scroll < sectionOffset_top && scroll < (sectionOffset_top + sectionHeight) ){
+                section.eq(i).removeClass('scrolling');
             }
 
         }
-        section.eq(i).addClass('scrolling');
 
     });
+
+    $(window).scroll();
 
 });
