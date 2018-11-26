@@ -212,13 +212,24 @@ nav h3.pageSubtitle:after { height: 1px; }
 
 .grid-12 { width: 100%; max-width: 100%; flex-basis: 100%; }
 
-.parallaxHeader { width: 100%; padding-bottom: 41.66667%; margin: 0 auto 40px; background: url("../images/parallax-bg.jpg") no-repeat top center/1440px 800px; background-attachment: fixed; overflow: hidden; }
+.parallaxHeader { width: 100%; padding-bottom: 41.6666666667%; margin: 0 auto 40px; background: url("../images/parallax-bg.jpg") no-repeat top center/1440px 800px; background-attachment: fixed; overflow: hidden; }
 
-.parallaxHeader__logo { position: absolute; left: 0; right: 0; top: 10.5%; bottom: 0; width: 25.69444%; height: 0; margin: 0 auto; padding-bottom: 6.73611%; background: url("../images/parallax-logo.png") no-repeat center center/contain; }
+.parallaxHeader__logo { position: absolute; left: 0; right: 0; top: 10.5%; bottom: 0; width: 25.6944444444%; height: 0; margin: 0 auto; padding-bottom: 6.7361111111%; background: url("../images/parallax-logo.png") no-repeat center center/contain; }
 
-.parallaxHeader__tire { position: absolute; right: 30%; bottom: 0; width: 25.06944%; height: 0; margin: 0 auto; padding-bottom: 17.15278%; background: url("../images/parallax-tire.png") no-repeat center top/contain; }
+.parallaxHeader__tire { position: absolute; right: 30%; bottom: 0; width: 25.0694444444%; height: 0; margin: 0 auto; padding-bottom: 17.1527777778%; background: url("../images/parallax-tire.png") no-repeat center top/contain; }
 
-.parallaxHeader__jump { position: absolute; right: 25.5%; bottom: 25%; width: 18.75%; height: 0; margin: 0 auto; padding-bottom: 23.68056%; background: url("../images/parallax-jump.png") no-repeat center top/contain; }
+.parallaxHeader__jump { position: absolute; right: 25.5%; bottom: 25%; width: 18.75%; height: 0; margin: 0 auto; padding-bottom: 23.6805555556%; background: url("../images/parallax-jump.png") no-repeat center top/contain; }
+
+.floatingElements { display: -ms-flexbox; display: flex; justify-content: center; align-items: stretch; flex-wrap: wrap; width: 100%; max-width: 880px; margin: 0 auto; }
+
+.floatingElements__item { width: 32%; max-width: 32%; flex-basis: 32%; -webkit-transition: all ease-in-out 0.3s; -moz-transition: all ease-in-out 0.3s; -ms-transition: all ease-in-out 0.3s; -o-transition: all ease-in-out 0.3s; transition: all ease-in-out 0.3s; margin: 0 2% 20px 0; transform: translate(20px, -20px); opacity: 0; }
+.floatingElements__item:nth-child(3n) { margin: 0 0 20px 0; }
+.floatingElements__item.fading { transform: translate(0px, 0px); opacity: 1; }
+
+.element__title { display: block; padding: 8px 0; margin: 0 auto 16px; font-size: 1.25rem; }
+.element__title:after { display: block; position: absolute; bottom: 0; left: 0; width: 40%; height: 2px; margin: 0; background: #34495e; content: ""; }
+
+.promoScope { width: 100%; margin: 0 auto 40px; background: url("../images/scope-bg.jpg") no-repeat center bottom/cover; background-attachment: fixed; content: ""; }
 
 .responsiveTable--collapse--col3, .responsiveTable--scroll--col3 { margin: 16px auto; background: rgba(0, 0, 0, 0.1); }
 .responsiveTable--collapse--col3:after, .responsiveTable--scroll--col3:after { display: block; width: 0; height: 0; clear: both; font-size: 0; line-height: 0; visibility: hidden; content: ' '; }

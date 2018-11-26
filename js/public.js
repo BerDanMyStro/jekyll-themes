@@ -201,4 +201,36 @@ $(document).ready(function(){
 
         --- --- --- --- --- --- --- --- */
 
+    // Floating Elements
+    /*$(window).scroll(function () {
+
+        let scroll = $(window).scrollTop();
+        let floatingElements_offset = $('.floatingElements').offset().top - ($(window).height() / 1.5);
+
+        if(scroll > floatingElements_offset){
+            $('.floatingElements__item').each(function (i) {
+                    setTimeout(function(){
+                        $('.floatingElements__item').eq(i).addClass('fading');
+                    }, 175 * (i+1));
+            });
+        }
+
+    });
+    $(window).scroll();*/
+
+    // Promo Scope
+    $(window).scroll(function () {
+
+        let scroll = $(window).scrollTop();
+        let promoScope = $('.promoScope').offset().top - $(window).height();
+
+        if(scroll > promoScope){
+            $('.promoScope').css({
+               'background-position' : 'center '+ scroll/16 +'px'
+            });
+        }
+
+    });
+    $(window).scroll();
+
 });
