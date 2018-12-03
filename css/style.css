@@ -257,6 +257,28 @@ nav h3.pageSubtitle:after { height: 1px; }
 @media only screen and (min-width: 756px) { .responsiveTable--scroll--col3 table:after { display: none; } }
 .responsiveTable--scroll--col3 table tbody tr td, .responsiveTable--scroll--col3 table tbody tr th { width: 33.3333%; padding: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.175); vertical-align: middle; }
 
+/* entire container, keeps perspective */
+.flip-container { perspective: 1000; transform-style: preserve-3d; color: #fff; }
+
+/*  UPDATED! flip the pane when hovered */
+/*.flip-container:hover .back { transform: rotateY(0deg);
+}
+.flip-container:hover .front { transform: rotateY(180deg);
+}*/
+.flip-container, .front, .back { width: 200px; height: 200px; }
+
+/* flip speed goes here */
+.card { transition: 0.6s; transform-style: preserve-3d; position: relative; }
+
+/* hide back of pane during swap */
+.front, .back { backface-visibility: hidden; transition: 0.6s; transform-style: preserve-3d; position: absolute; top: 0; left: 0; }
+
+/*  UPDATED! front pane, placed above back */
+.front { z-index: 2; transform: rotateY(0deg); background: red; }
+
+/* back, initially hidden pane */
+.back { transform: rotateY(-180deg); background: blue; }
+
 .madeBy { width: 100%; margin-bottom: 24px; color: white; font-size: 0.6875rem; text-align: center; }
 @media only screen and (min-width: 1024px) { .madeBy { margin-bottom: 0; } }
 

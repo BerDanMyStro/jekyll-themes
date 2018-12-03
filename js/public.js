@@ -1,4 +1,4 @@
-// >> Reset Style --- >
+// >> Public Js --- >
 
 function scrollTo(target, speed) {
     if (target) {
@@ -179,6 +179,24 @@ $(document).ready(function(){
 
     });
 
+    // Flipping Cards
+    let flipped=false;
+
+    $('.flip-container').on('click', function(){
+        if(!flipped){
+            $('.back').css('transform','rotateY(0deg)');
+            $('.front').css('transform','rotateY(180deg)');
+            flipped=true;
+            console.log('true part :'+flipped);
+        }
+        else{
+            $('.back').css('transform','rotateY(180deg)');
+            $('.front').css('transform','rotateY(0deg)');
+            flipped=false;
+            console.log('else part :'+flipped);
+        }
+    });
+
     // Lorem Text Generator
     $('.sample-1').looreem({'wC':50, 'isHTML':true, 'langSel':arrayHU});
     // $('#sample-2').looreem({'genType':'p','pC':2,'sPP':5,'wPPS':25,'isHTML':true,'langSel':arrayHU});
@@ -219,7 +237,7 @@ $(document).ready(function(){
     $(window).scroll();*/
 
     // Promo Scope
-    $(window).scroll(function () {
+    /*$(window).scroll(function () {
 
         let scroll = $(window).scrollTop();
         let promoScope = $('.promoScope').offset().top - $(window).height();
@@ -231,6 +249,6 @@ $(document).ready(function(){
         }
 
     });
-    $(window).scroll();
+    $(window).scroll();*/
 
 });
