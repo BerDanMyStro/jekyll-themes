@@ -184,16 +184,14 @@ $(document).ready(function(){
 
     $('.flip-container').on('click', function(){
         if(!flipped){
-            $('.back').css('transform','rotateY(0deg)');
-            $('.front').css('transform','rotateY(180deg)');
+            $(this).children('.card').children('.back').css('transform','rotateY(0deg)');
+            $(this).children('.card').children('.front').css('transform','rotateY(180deg)');
             flipped=true;
-            console.log('true part :'+flipped);
         }
         else{
-            $('.back').css('transform','rotateY(180deg)');
-            $('.front').css('transform','rotateY(0deg)');
+            $(this).children('.card').children('.back').css('transform','rotateY(180deg)');
+            $(this).children('.card').children('.front').css('transform','rotateY(0deg)');
             flipped=false;
-            console.log('else part :'+flipped);
         }
     });
 
