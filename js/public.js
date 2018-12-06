@@ -9,7 +9,7 @@ function scrollTo(target, speed) {
 }
 
 // Circle cursor
-$(document).mousemove(function(e) {
+/*$(document).mousemove(function(e) {
 
     $('.circlePointer').css({
         left: e.pageX,
@@ -23,7 +23,7 @@ $(document).mousemove(function(e) {
         });
     }, 100);
 
-});
+});*/
 
 $(document).ready(function(){
 
@@ -248,5 +248,31 @@ $(document).ready(function(){
 
     });
     $(window).scroll();*/
+
+    // jQuery Column Collapse Table
+
+    let miniTable = $('.responsiveTable--mini');
+    let theadTr = $('.responsiveTable--big--col3 thead').find('tr');
+    let tbodyTr = $('.responsiveTable--big--col3 tbody').find('tr');
+    let noColumn = theadTr[0].cells.length;
+    let columnTitle = theadTr.find('th');
+
+    for ( let i=0; i < noColumn; i++ ){
+
+        let columnContent = tbodyTr.find('td:nth-child(3n+' + (i+1) + ')');
+        let no_columnContent = columnContent.length;
+        let ulContent = [];
+
+        for (let j=0; j < no_columnContent; j++){
+            ulContent.push(columnContent[j].innerHTML);
+        }
+
+        miniTable.append(
+            '<div class="columnTitle">' + columnTitle[i].innerText + '</div>' +
+            '<ul>' +
+            `<li>${ulContent.join('</li><li>')}</li>` +
+            '</ul>'
+        );
+    }
 
 });

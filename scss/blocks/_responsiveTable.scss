@@ -35,6 +35,10 @@
 // >> Table Collapse Style
 .responsiveTable--collapse--col3{
     @extend %responsiveTable;
+    padding: 24px 0;
+    @include mq($ipad-port){
+        padding: 24px;
+    }
     table{
         thead{
             display: none;
@@ -108,5 +112,70 @@
                 vertical-align: middle;
             }
         }
+    }
+}
+// >> jQuerry Table
+.responsiveTable--mini{
+    padding: 24px 0;
+    background: b(0.1);
+    .columnTitle{
+        padding: 16px;
+        border-bottom: 2px solid b(0.175);
+        background: w(0.5);
+        font-weight: bold;
+    }
+    ul{
+        padding: 0;
+        margin: 0 0 24px 0;
+        list-style: none;
+        &:last-child{
+            margin: 0;
+        }
+        li{
+            margin: 0;
+            padding: 16px 16px 0;
+            background: w(0.75);
+            &:last-child{
+                padding: 16px;
+            }
+        }
+    }
+    @include mq($ipad-port){
+        display: none;
+    }
+}
+.responsiveTable--big--col3{
+    @extend %responsiveTable;
+    padding: 24px 0;
+    overflow-x: auto;
+    @include mq($ipad-port){
+        padding: 24px;
+    }
+    table{
+        min-width: 680px;
+        &:after{
+            display: block;
+            width: 100%;
+            margin-top: 24px;
+            padding-left: 48px;
+            background: url("../images/icon-swipe.svg") no-repeat left 24px bottom 2px / 20px;
+            text-align: left;
+            content: "Swipe";
+            @include mq($ipad-port){
+                display: none;
+            }
+        }
+        tbody tr{
+            td,th{
+                width: 33.3333%;
+                padding: 16px;
+                border-bottom: 1px solid b(0.175);
+                vertical-align: middle;
+            }
+        }
+    }
+    display: none;
+    @include mq($ipad-port){
+        display: block;
     }
 }

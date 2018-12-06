@@ -88,14 +88,6 @@ header { display: -ms-flexbox; display: flex; justify-content: center; align-ite
 footer { width: 100%; background: #2c3e50; padding: 0; }
 @media only screen and (min-width: 1024px) { footer { padding: 24px 0; } }
 
-* { cursor: none; }
-*:hover { cursor: none; }
-
-.circlePointer { position: absolute; width: 8px; height: 8px; content: ""; border-radius: 50%; background: rgba(44, 62, 80, 0.75); transform: translateX(-50%) translateY(-50%); z-index: 10001; pointer-events: none; }
-
-.circleCursor { -webkit-transition: width ease-in-out 0.05s; -moz-transition: width ease-in-out 0.05s; -ms-transition: width ease-in-out 0.05s; -o-transition: width ease-in-out 0.05s; transition: width ease-in-out 0.05s; -webkit-transition: height ease-in-out 0.05s; -moz-transition: height ease-in-out 0.05s; -ms-transition: height ease-in-out 0.05s; -o-transition: height ease-in-out 0.05s; transition: height ease-in-out 0.05s; position: absolute; top: -50%; left: -50%; display: block; width: 36px; height: 36px; border-radius: 50%; border: 3px solid rgba(44, 62, 80, 0.5); background: rgba(255, 255, 255, 0.25); content: ""; transform: translateX(-50%) translateY(-50%); pointer-events: none; z-index: 10000; }
-.circleCursor.hover { width: 48px; height: 48px; }
-
 body { background: url("../images/skulls.png"); font-family: 'Poppins', sans-serif; overflow-x: hidden; }
 
 .pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; position: static; width: 100%; padding: 40px 0 60px 0; }
@@ -231,15 +223,17 @@ nav h3.pageSubtitle:after { height: 1px; }
 
 .promoScope { width: 100%; margin: 0 auto 40px; background: url("../images/scope-bg.jpg") no-repeat center bottom/cover; background-attachment: fixed; content: ""; }
 
-.responsiveTable--collapse--col3, .responsiveTable--scroll--col3 { margin: 16px auto; background: rgba(0, 0, 0, 0.1); }
-.responsiveTable--collapse--col3:after, .responsiveTable--scroll--col3:after { display: block; width: 0; height: 0; clear: both; font-size: 0; line-height: 0; visibility: hidden; content: ' '; }
-@media only screen and (min-width: 756px) { .responsiveTable--collapse--col3, .responsiveTable--scroll--col3 { padding: 24px; } }
-.responsiveTable--collapse--col3 table, .responsiveTable--scroll--col3 table { width: 100%; }
-.responsiveTable--collapse--col3 table thead, .responsiveTable--scroll--col3 table thead { background: rgba(255, 255, 255, 0.5); }
-.responsiveTable--collapse--col3 table thead tr td, .responsiveTable--scroll--col3 table thead tr td, .responsiveTable--collapse--col3 table thead tr th, .responsiveTable--scroll--col3 table thead tr th { padding: 16px; border-bottom: 2px solid rgba(0, 0, 0, 0.175); text-align: left; }
-.responsiveTable--collapse--col3 table tbody, .responsiveTable--scroll--col3 table tbody { background: rgba(255, 255, 255, 0.75); }
-.responsiveTable--collapse--col3 table tbody tr:last-child td, .responsiveTable--scroll--col3 table tbody tr:last-child td, .responsiveTable--collapse--col3 table tbody tr:last-child th, .responsiveTable--scroll--col3 table tbody tr:last-child th { border-bottom: none; }
+.responsiveTable--collapse--col3, .responsiveTable--scroll--col3, .responsiveTable--big--col3 { margin: 16px auto; background: rgba(0, 0, 0, 0.1); }
+.responsiveTable--collapse--col3:after, .responsiveTable--scroll--col3:after, .responsiveTable--big--col3:after { display: block; width: 0; height: 0; clear: both; font-size: 0; line-height: 0; visibility: hidden; content: ' '; }
+@media only screen and (min-width: 756px) { .responsiveTable--collapse--col3, .responsiveTable--scroll--col3, .responsiveTable--big--col3 { padding: 24px; } }
+.responsiveTable--collapse--col3 table, .responsiveTable--scroll--col3 table, .responsiveTable--big--col3 table { width: 100%; }
+.responsiveTable--collapse--col3 table thead, .responsiveTable--scroll--col3 table thead, .responsiveTable--big--col3 table thead { background: rgba(255, 255, 255, 0.5); }
+.responsiveTable--collapse--col3 table thead tr td, .responsiveTable--scroll--col3 table thead tr td, .responsiveTable--big--col3 table thead tr td, .responsiveTable--collapse--col3 table thead tr th, .responsiveTable--scroll--col3 table thead tr th, .responsiveTable--big--col3 table thead tr th { padding: 16px; border-bottom: 2px solid rgba(0, 0, 0, 0.175); text-align: left; }
+.responsiveTable--collapse--col3 table tbody, .responsiveTable--scroll--col3 table tbody, .responsiveTable--big--col3 table tbody { background: rgba(255, 255, 255, 0.75); }
+.responsiveTable--collapse--col3 table tbody tr:last-child td, .responsiveTable--scroll--col3 table tbody tr:last-child td, .responsiveTable--big--col3 table tbody tr:last-child td, .responsiveTable--collapse--col3 table tbody tr:last-child th, .responsiveTable--scroll--col3 table tbody tr:last-child th, .responsiveTable--big--col3 table tbody tr:last-child th { border-bottom: none; }
 
+.responsiveTable--collapse--col3 { padding: 24px 0; }
+@media only screen and (min-width: 756px) { .responsiveTable--collapse--col3 { padding: 24px; } }
 .responsiveTable--collapse--col3 table thead { display: none; }
 @media only screen and (min-width: 756px) { .responsiveTable--collapse--col3 table thead { display: table-header-group; } }
 .responsiveTable--collapse--col3 table tbody tr:last-child td:last-child { border-bottom: none; }
@@ -256,6 +250,22 @@ nav h3.pageSubtitle:after { height: 1px; }
 .responsiveTable--scroll--col3 table:after { display: block; width: 100%; margin-top: 24px; padding-left: 48px; background: url("../images/icon-swipe.svg") no-repeat left 24px bottom 2px/20px; text-align: left; content: "Swipe"; }
 @media only screen and (min-width: 756px) { .responsiveTable--scroll--col3 table:after { display: none; } }
 .responsiveTable--scroll--col3 table tbody tr td, .responsiveTable--scroll--col3 table tbody tr th { width: 33.3333%; padding: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.175); vertical-align: middle; }
+
+.responsiveTable--mini { padding: 24px 0; background: rgba(0, 0, 0, 0.1); }
+.responsiveTable--mini .columnTitle { padding: 16px; border-bottom: 2px solid rgba(0, 0, 0, 0.175); background: rgba(255, 255, 255, 0.5); font-weight: bold; }
+.responsiveTable--mini ul { padding: 0; margin: 0 0 24px 0; list-style: none; }
+.responsiveTable--mini ul:last-child { margin: 0; }
+.responsiveTable--mini ul li { margin: 0; padding: 16px 16px 0; background: rgba(255, 255, 255, 0.75); }
+.responsiveTable--mini ul li:last-child { padding: 16px; }
+@media only screen and (min-width: 756px) { .responsiveTable--mini { display: none; } }
+
+.responsiveTable--big--col3 { padding: 24px 0; overflow-x: auto; display: none; }
+@media only screen and (min-width: 756px) { .responsiveTable--big--col3 { padding: 24px; } }
+.responsiveTable--big--col3 table { min-width: 680px; }
+.responsiveTable--big--col3 table:after { display: block; width: 100%; margin-top: 24px; padding-left: 48px; background: url("../images/icon-swipe.svg") no-repeat left 24px bottom 2px/20px; text-align: left; content: "Swipe"; }
+@media only screen and (min-width: 756px) { .responsiveTable--big--col3 table:after { display: none; } }
+.responsiveTable--big--col3 table tbody tr td, .responsiveTable--big--col3 table tbody tr th { width: 33.3333%; padding: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.175); vertical-align: middle; }
+@media only screen and (min-width: 756px) { .responsiveTable--big--col3 { display: block; } }
 
 /* entire container, keeps perspective */
 .flip-container { perspective: 1000; transform-style: preserve-3d; color: #fff; }
