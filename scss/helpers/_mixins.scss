@@ -71,7 +71,7 @@
     justify-content: $justify;
     align-items: $align;
 }
-@mixin grid($justify: start, $align: start){
+@mixin grid($justify: start, $align: stretch){
     display: -ms-grid;
     display: grid;
     justify-content: $justify;

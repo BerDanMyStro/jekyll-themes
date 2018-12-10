@@ -1,0 +1,277 @@
+// >> Timetable Style --- >
+
+.training{
+    color: white;
+    font-size: rem(14px);
+    font-weight: 300;
+    text-align: center;
+    div{
+        line-height: 1.43;
+    }
+    .training__name{
+        font-weight: normal
+    }
+    .training__time{
+        margin-bottom: 12px;
+        font-size: rem(12px);
+    }
+}
+
+.timeTable{
+    background: b(0.1);
+    @include mq($ipad-port){
+        padding: 24px;
+    }
+    li{
+        padding: 16px;
+        &:first-child{
+            @include mq-max($max--ipad-port){
+                display: none;
+            }
+        }
+    }
+    .tableBody{
+        @include mq-max($max--ipad-port){
+            display: block;
+        }
+        @include grid();
+        grid-template-columns: [first] 80px [line2] 1fr [line3] 1fr [line4] 1fr [line5] 1fr [end] 1fr;
+        background: w(0.75);
+        li{
+            align-self: center;
+            &.tableHead{
+                border-bottom: 2px solid b(0.175);
+                background: w(0.5);
+                font-weight: 700;
+                text-align: center;
+                @include mq($ipad-port){
+                    @include flex(center,center);
+                    height: 100%;
+                }
+            }
+        }
+        // Times for Classes
+        @for $i from 1 through 22{
+                .table__time--#{$i}{
+                display: none;
+                    @include mq($ipad-port){
+                        @include flex(center,center);
+                    height: 100%;
+                    grid-column: 1 / 2;
+                    grid-row: #{1+$i} / #{2+$i};
+                    border-bottom: 1px solid b(0.175);
+                    text-align: center;
+                }
+            }
+        }
+        // Monday Classes
+        @for $i from 1 through 4{
+            .mondayClass--DE#{$i}{
+                @include flex(center,center);
+                height: 100%;
+                background-color: $flat-color_1;
+                grid-column: 2 / 3;
+                grid-row: #{0+$i*2} / #{2+$i*2};
+                border-bottom: 1px solid w(0.175);
+                &.open{
+                    background-color: $flat-color_10;
+                }
+            }
+        }
+        .mondayLunch{
+            @include mq-max($max--ipad-port){
+                grid-column: 1 / 7;
+            }
+            @include flex(center,center);
+            height: 100%;
+            background: b(0.175);
+            grid-column: 2 / 3;
+            grid-row:  10 / 11;
+            border-bottom: 1px solid b(0.175);
+        }
+        .mondayFree--01{
+            @include mq-max($max--ipad-port){
+                &:empty{
+                    display: none;
+                }
+            }
+            @include flex(center,center);
+            height: 100%;
+            background: b(0.075);
+            grid-column: 2 / 3;
+            grid-row:  11/ 13;
+            border-bottom: 1px solid b(0.175);
+        }
+        @for $i from 1 through 2{
+            .mondayClass--DU#{$i}{
+                @include flex(center,center);
+                height: 100%;
+                background-color: $flat-color_1;
+                grid-column: 2 / 3;
+                grid-row: #{11+$i*2} / #{13+$i*2};
+                border-bottom: 1px solid w(0.175);
+                &.open{
+                    background-color: $flat-color_10;
+                }
+            }
+        }
+        .mondayFree--02{
+            @include mq-max($max--ipad-port){
+                &:empty{
+                    display: none;
+                }
+            }
+            @include flex(center,center);
+            height: 100%;
+            background: b(0.075);
+            grid-column: 2 / 3;
+            grid-row:  17 / 18;
+            border-bottom: 1px solid b(0.175);
+        }
+        @for $i from 1 through 3{
+            .mondayClass--DU#{2+$i}{
+                @include flex(center,center);
+                height: 100%;
+                background-color: $flat-color_1;
+                grid-column: 2 / 3;
+                grid-row: #{16+$i*2} / #{18+$i*2};
+                border-bottom: 1px solid w(0.175);
+                &.open{
+                    background-color: $flat-color_10;
+                }
+                &.group{
+                    background-color: #4aa3df;
+                }
+            }
+        }
+        // Szeged
+        .szeged-1{
+            @include flex(center,center);
+            height: 100%;
+            grid-column: 3 / 4;
+            grid-row: 2 / 24;
+            background: b(0.075);
+        }
+        .szeged-2{
+            @include flex(center,center);
+            height: 100%;
+            grid-column: 5 / 6;
+            grid-row: 2 / 24;
+            background: b(0.075);
+        }
+        // Wednesday Classes
+        @for $i from 1 through 4{
+            .wednesdayClass--DE#{$i}{
+                @include flex(center,center);
+                height: 100%;
+                background-color: $flat-color_1;
+                grid-column: 4 / 5;
+                grid-row: #{0+$i*2} / #{2+$i*2};
+                border-bottom: 1px solid w(0.175);
+                &.open{
+                    background-color: $flat-color_10;
+                }
+            }
+        }
+        .wednesdayLunch{
+            @include mq-max($max--ipad-port){
+                grid-column: 1 / 7;
+            }
+            @include flex(center,center);
+            height: 100%;
+            background: b(0.175);
+            grid-column: 4 / 5;
+            grid-row:  10 / 11;
+            border-bottom: 1px solid b(0.175);
+        }
+        .wednesdayFree--01{
+            @include mq-max($max--ipad-port){
+                &:empty{
+                    display: none;
+                }
+            }
+            @include flex(center,center);
+            height: 100%;
+            background: b(0.075);
+            grid-column: 4 / 5;
+            grid-row:  11/ 12;
+            border-bottom: 1px solid b(0.175);
+        }
+        @for $i from 1 through 6{
+            .wednesdayClass--DU#{$i}{
+                @include flex(center,center);
+                height: 100%;
+                background-color: $flat-color_1;
+                grid-column: 4 / 5;
+                grid-row: #{10+$i*2} / #{12+$i*2};
+                border-bottom: 1px solid w(0.175);
+                &.open{
+                    background-color: $flat-color_10;
+                }
+                &.group{
+                    background-color: #4aa3df;
+                }
+            }
+        }
+        // Friday Classes
+        @for $i from 1 through 4{
+            .fridayClass--DE#{$i}{
+                @include flex(center,center);
+                height: 100%;
+                background-color: $flat-color_1;
+                grid-column: 6 / 7;
+                grid-row: #{0+$i*2} / #{2+$i*2};
+                border-bottom: 1px solid w(0.175);
+                &.open{
+                    background-color: $flat-color_10;
+                }
+            }
+        }
+        .fridayLunch{
+            @include mq-max($max--ipad-port){
+                grid-column: 1 / 7;
+            }
+            @include flex(center,center);
+            height: 100%;
+            background: b(0.175);
+            grid-column: 6 / 7;
+            grid-row:  10 / 11;
+            border-bottom: 1px solid b(0.175);
+        }
+        @for $i from 1 through 6{
+            .fridayClass--DU#{$i}{
+                @include flex(center,center);
+                height: 100%;
+                background-color: $flat-color_1;
+                grid-column: 6 / 7;
+                grid-row: #{10+$i*2} / #{12+$i*2};
+                border-bottom: 1px solid w(0.175);
+                &.open{
+                    background-color: $flat-color_10;
+                }
+                &.group{
+                    background-color: #4aa3df;
+                }
+                &.free{
+                    background: b(0.075);
+                    @include mq-max($max--ipad-port){
+                            display: none;
+                    }
+                }
+            }
+        }
+        .fridayFree--01{
+            @include mq-max($max--ipad-port){
+                &:empty{
+                    display: none;
+                }
+            }
+            @include flex(center,center);
+            height: 100%;
+            background: b(0.075);
+            grid-column: 6 / 7;
+            grid-row:  11/ 12;
+            border-bottom: 1px solid b(0.175);
+        }
+    }
+}

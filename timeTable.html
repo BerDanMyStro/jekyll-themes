@@ -1,13 +1,38 @@
 ---
 layout: default
-title: Timetable Vue App
+title: Timetable with Css Grid
 ---
-<h2 class="pageTitle">Timetable</h2>
-<ul class="timeTable">
-    <li></li>
-    <li>Hétfő</li>
-    <li>Kedd</li>
-    <li>Szerda</li>
-    <li>Csütörtök</li>
-    <li>Péntek</li>
-</ul>
+<h2 class="pageTitle">Timetable with Css Grid</h2>
+<div class="timeTable">
+    <ul class="tableBody">
+        {% include timeTable/timeTable__time.html %}
+        {% include timeTable/timeTable__mondayDE.html %}
+        <li class="mondayLunch">
+            <div class="training">
+                <div class="training__name">Lunch Time</div>
+                <div class="training__time">12:00 - 12:30</div>
+            </div>
+        </li>
+        {% include timeTable/timeTable__mondayDU.html %}
+        <li class="tableHead">Kedd</li>
+        <li class="szeged-1">Szeged</li>
+        {% include timeTable/timeTable__wednesdayDE.html %}
+        <li class="wednesdayLunch">
+            <div class="training">
+                <div class="training__name">Lunch Time</div>
+                <div class="training__time">12:00 - 12:30</div>
+            </div>
+        </li>
+        {% include timeTable/timeTable__wednesdayDU.html %}
+        <li class="tableHead">Csütörtök</li>
+        <li class="szeged-2">Szeged</li>
+        {% include timeTable/timeTable__fridayDE.html %}
+        <li class="fridayLunch">
+            <div class="training">
+                <div class="training__name">Lunch Time</div>
+                <div class="training__time">12:00 - 12:30</div>
+            </div>
+        </li>
+        {% include timeTable/timeTable__fridayDU.html %}
+    </ul>
+</div>
