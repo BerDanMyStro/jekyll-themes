@@ -267,14 +267,22 @@ nav h3.pageSubtitle:after { height: 1px; }
 .responsiveTable--big--col3 table tbody tr td, .responsiveTable--big--col3 table tbody tr th { width: 33.3333%; padding: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.175); vertical-align: middle; }
 @media only screen and (min-width: 756px) { .responsiveTable--big--col3 { display: block; } }
 
-.training { color: white; font-size: 0.875rem; font-weight: 300; text-align: center; }
+.training { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; width: 100%; color: white; font-size: 0.875rem; font-weight: 300; text-align: center; }
 .training div { line-height: 1.43; }
-.training .training__name { font-weight: normal; }
-.training .training__time { margin-bottom: 12px; font-size: 0.75rem; }
+.training .training__name { width: 50%; max-width: 50%; flex-basis: 50%; margin-bottom: 4px; font-weight: normal; text-align: left; }
+@media only screen and (min-width: 756px) { .training .training__name { width: 100%; max-width: 100%; flex-basis: 100%; margin-bottom: 0; text-align: center; } }
+.training .training__time { width: 50%; max-width: 50%; flex-basis: 50%; font-size: 0.75rem; text-align: right; }
+@media only screen and (min-width: 756px) { .training .training__time { width: 100%; max-width: 100%; flex-basis: 100%; margin-bottom: 12px; text-align: center; } }
+.training .training__trainer { width: auto; max-width: auto; flex-basis: auto; text-align: left; }
+@media only screen and (max-width: 756px) { .training .training__trainer { padding-right: 8px; margin-right: 8px; border-right: 1px solid white; } }
+@media only screen and (min-width: 756px) { .training .training__trainer { width: 100%; max-width: 100%; flex-basis: 100%; text-align: center; } }
+.training .training__limit { width: auto; max-width: auto; flex-basis: auto; text-align: left; }
+@media only screen and (min-width: 756px) { .training .training__limit { width: 100%; max-width: 100%; flex-basis: 100%; text-align: center; } }
 
 .timeTable { background: rgba(0, 0, 0, 0.1); }
 @media only screen and (min-width: 756px) { .timeTable { padding: 24px; } }
-.timeTable li { padding: 16px; }
+.timeTable li { padding: 8px; }
+@media only screen and (min-width: 756px) { .timeTable li { padding: 16px; } }
 @media only screen and (max-width: 756px) { .timeTable li:first-child { display: none; } }
 .timeTable .tableBody { display: -ms-grid; display: grid; justify-content: start; align-items: stretch; grid-template-columns: [first] 80px [line2] 1fr [line3] 1fr [line4] 1fr [line5] 1fr [end] 1fr; background: rgba(255, 255, 255, 0.75); }
 @media only screen and (max-width: 756px) { .timeTable .tableBody { display: block; } }

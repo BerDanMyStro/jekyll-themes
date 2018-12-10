@@ -1,6 +1,9 @@
 // >> Timetable Style --- >
 
 .training{
+    @include flex(flex-start, center);
+    flex-wrap: wrap;
+    width: 100%;
     color: white;
     font-size: rem(14px);
     font-weight: 300;
@@ -9,11 +12,46 @@
         line-height: 1.43;
     }
     .training__name{
-        font-weight: normal
+        @include flexWidth(50%);
+        margin-bottom: 4px;
+        font-weight: normal;
+        text-align: left;
+        @include mq($ipad-port){
+            @include flexWidth(100%);
+            margin-bottom: 0;
+            text-align: center;
+        }
     }
     .training__time{
-        margin-bottom: 12px;
+        @include flexWidth(50%);
         font-size: rem(12px);
+        text-align: right;
+        @include mq($ipad-port){
+            @include flexWidth(100%);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+    }
+    .training__trainer{
+        @include flexWidth(auto);
+        text-align: left;
+        @include mq-max($max--ipad-port){
+            padding-right: 8px;
+            margin-right: 8px;
+            border-right: 1px solid white;
+        }
+        @include mq($ipad-port){
+            @include flexWidth(100%);
+            text-align: center;
+        }
+    }
+    .training__limit{
+        @include flexWidth(auto);
+        text-align: left;
+        @include mq($ipad-port){
+            @include flexWidth(100%);
+            text-align: center;
+        }
     }
 }
 
@@ -23,7 +61,10 @@
         padding: 24px;
     }
     li{
-        padding: 16px;
+        padding: 8px;
+        @include mq($ipad-port){
+            padding: 16px;
+        }
         &:first-child{
             @include mq-max($max--ipad-port){
                 display: none;
