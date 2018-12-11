@@ -263,15 +263,15 @@ $(document).ready(function(){
         let no_columnContent = columnContent.length;
         let ulContent = [];
 
+        console.log(ulContent);
+
         for (let j=0; j < no_columnContent; j++){
-            ulContent.push(columnContent[j].innerHTML);
+            ulContent.push('<li>' + columnContent[j].innerHTML + '</li>');
         }
 
         miniTable.append(
             '<div class="columnTitle">' + columnTitle[i].innerText + '</div>' +
-            '<ul>' +
-            `<li>${ulContent.join('</li><li>')}</li>` +
-            '</ul>'
+            '<ul>' + ulContent.join('') + '</ul>'
         );
     }
 
