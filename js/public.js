@@ -263,8 +263,6 @@ $(document).ready(function(){
         let no_columnContent = columnContent.length;
         let ulContent = [];
 
-        console.log(ulContent);
-
         for (let j=0; j < no_columnContent; j++){
             ulContent.push('<li>' + columnContent[j].innerHTML + '</li>');
         }
