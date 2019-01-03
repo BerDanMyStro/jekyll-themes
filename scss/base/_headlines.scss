@@ -39,6 +39,7 @@ h6{
 }
 h2.pageTitle{
     @extend %pageTitle;
+    line-height: 1.2;
     &:after{
         @extend %pageTitle--underline;
     }

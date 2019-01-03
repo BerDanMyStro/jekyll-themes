@@ -59,8 +59,9 @@ h6 { font-size: 1rem; }
 
 h2.pageTitle, h2.pageTitle--grouped { font-size: 2em; font-weight: 300; }
 
-h2.pageTitle:after, h3.pageSubtitle:after, h3.pageSubtitle--grouped:after { display: block; position: absolute; bottom: -8px; left: 0; right: 0; width: 150px; height: 2px; background: #34495e; content: ""; }
+h2.pageTitle:after, h3.pageSubtitle:after, h3.pageSubtitle--grouped:after, .baseForm legend.formSection__title:after { display: block; position: absolute; bottom: -8px; left: 0; right: 0; width: 150px; height: 2px; background: #34495e; content: ""; }
 
+h2.pageTitle { line-height: 1.2; }
 h2.pageTitle--grouped { margin-bottom: 0; }
 
 h3.pageSubtitle { font-weight: 300; }
@@ -171,9 +172,30 @@ nav h3.pageSubtitle:after { height: 1px; }
 .sectionNav__item .sectionTitle { display: none; position: absolute; top: 0; left: -166px; height: 24px; font-size: 12px; }
 .sectionNav__item .sectionTitle span { padding: 8px; border-radius: 3px; background: #2c3e50; color: white; font-weight: 300; }
 
-.baseForm .form__item { margin: 0 0 16px 0; }
-.baseForm label { display: block; }
-.baseForm input, .baseForm select, .baseForm textarea, .baseForm button { -webkit-appearance: none; -moz-appearance: none; appearance: none; margin: 0; padding: 0 0 0 0; border: none; outline: none; }
+.baseForm fieldset.formSection { margin-bottom: 24px; }
+.baseForm legend.formSection__title { display: block; margin-bottom: 24px; font-size: 1.5rem; font-weight: 300; }
+.baseForm .form__item { display: -ms-flexbox; display: flex; justify-content: space-beatwen; align-items: stretch; flex-wrap: wrap; margin: 0 0 16px 0; }
+.baseForm .form__item:last-child { margin: 0; }
+.baseForm .form__item.validate.errorFound .formTitle:after { color: red; }
+.baseForm .form__item.validate .formTitle:after { display: inline-block; padding-left: 4px; content: '*'; }
+.baseForm .form__item .formTitle { width: 100%; max-width: 100%; flex-basis: 100%; margin: 0 0 8px 0; }
+@media only screen and (min-width: 756px) { .baseForm .form__item .formTitle { width: 256px; max-width: 256px; flex-basis: 256px; margin: 0; padding: 10px 16px 0 0; } }
+.baseForm .form__item .formField { width: 100%; max-width: 100%; flex-basis: 100%; }
+@media only screen and (min-width: 756px) { .baseForm .form__item .formField { width: calc(100% - 256px); max-width: calc(100% - 256px); flex-basis: calc(100% - 256px); } }
+.baseForm .form__item .formField .formError { margin: 4px 0 0; color: red; font-size: 0.75rem; }
+.baseForm input, .baseForm select, .baseForm textarea, .baseForm button { -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 100%; margin: 0; padding: 0 12px; border: none; outline: none; font-family: 'Poppins', sans-serif; font-size: 0.875rem; font-weight: 300; }
+.baseForm input[type=submit] { width: auto; height: 36px; cursor: pointer; }
+.baseForm input[type=text] { height: 36px; }
+.baseForm input[data-type=numbersOnly] { max-width: 50px; text-align: right; }
+.baseForm select { height: 36px; padding: 0 36px 0 12px; background: white url("../images/formIcons/svg-select.svg") no-repeat right 10px center/16px; }
+.baseForm .form__item__checkbox { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: center; margin: 7px 0; }
+.baseForm .form__item__checkbox input[type='checkbox'] { display: none; }
+.baseForm .form__item__checkbox input[type='checkbox'] + label { display: block; width: 20px; height: 20px; padding: 0; background-color: #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05); margin-right: 0.5em; z-index: 2; }
+.baseForm .form__item__checkbox input[type='checkbox']:checked + label:after { display: block; width: 100%; height: 100%; background: url("../images/formIcons/svg-check.svg") no-repeat center center/16px; content: ''; }
+.baseForm .form__item__checkbox { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: center; margin: 7px 0; }
+.baseForm .form__item__checkbox input[type='radio'] { display: none; }
+.baseForm .form__item__checkbox input[type='radio'] + label { display: block; width: 20px; height: 20px; margin-right: 0.5em; padding: 0; border-radius: 50%; background-color: #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05); z-index: 2; }
+.baseForm .form__item__checkbox input[type='radio']:checked + label:after { display: block; width: 100%; height: 100%; background: url("../images/formIcons/svg-radio.svg") no-repeat center center/8px; content: ''; }
 
 .gridLines { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: flex-start; }
 .gridLines:last-child div, .gridLines div:nth-child(2n) { background: #34495e; }

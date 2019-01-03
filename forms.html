@@ -7,13 +7,84 @@ title: Forms and validation
     <fieldset class="formSection">
         <legend class="formSection__title">Alap form típusok</legend>
         <div class="formWrapper">
-            <div class="form__item">
-                <label for="first_name">First Name:</label>
-                <input type="text" id="first_name" name="first_name">
+            <div class="form__item validate">
+                <label for="first_name" class="formTitle">First Name:</label>
+                <div class="formField">
+                    <input type="text" id="first_name" name="first_name">
+                </div>
             </div>
-            <div class="form__item">
-                <label for="last_name">Last Name:</label>
-                <input type="text" id="last_name" name="last_name">
+            <div class="form__item validate">
+                <label for="last_name" class="formTitle">Last Name:</label>
+                <div class="formField">
+                    <input type="text" id="last_name" name="last_name">
+                </div>
+            </div>
+            <div class="form__item validate">
+                <label for="last_name" class="formTitle">Sex:</label>
+                <div class="formField">
+                    <select name="sex" id="sex">
+                        <option value="default">Select one...</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form__item validate">
+                <label for="age" class="formTitle">Age:</label>
+                <div class="formField">
+                    <input type="text" id="age" name="age" data-type="numbersOnly" maxlength="2">
+                </div>
+            </div>
+            <div class="form__item validate">
+                <label for="last_name" class="formTitle">Accept terms</label>
+                <div class="formField">
+                    <div class="form__item__checkbox">
+                        <input type="checkbox" id="accept" name="accept">
+                        <label for="accept"></label>
+                        <div class="checkBox__text">Accept</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form__item validate">
+                <label for="last_name" class="formTitle">Interested in:</label>
+                <div class="formField">
+                    <div class="form__item__checkbox">
+                        <input type="checkbox" id="intereseted_in1" name="interesetedIn1">
+                        <label for="intereseted_in1"></label>
+                        <div class="checkBox__text">Html</div>
+                    </div>
+                    <div class="form__item__checkbox">
+                        <input type="checkbox" id="intereseted_in2" name="interesetedIn1">
+                        <label for="intereseted_in2"></label>
+                        <div class="checkBox__text">Css</div>
+                    </div>
+                    <div class="form__item__checkbox">
+                        <input type="checkbox" id="intereseted_in3" name="interesetedIn1">
+                        <label for="intereseted_in3"></label>
+                        <div class="checkBox__text">jQuery</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form__item validate">
+                <label for="last_name" class="formTitle">Newsletter subscription</label>
+                <div class="formField">
+                    <div class="form__item__checkbox">
+                        <input type="radio" id="yes" name="newsletter">
+                        <label for="yes"></label>
+                        <div class="checkBox__text">Yes</div>
+                    </div>
+                    <div class="form__item__checkbox">
+                        <input type="radio" id="no" name="newsletter">
+                        <label for="no"></label>
+                        <div class="checkBox__text">No</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form__item validate">
+                <label for="email" class="formTitle">E-mail:</label>
+                <div class="formField">
+                    <input type="text" id="email" name="email" data-type="email">
+                </div>
             </div>
         </div>
     </fieldset>

@@ -141,17 +141,83 @@ $(document).ready(function(){
     // Form validations
     $('#baseForm').submit(function(e) {
         e.preventDefault();
-        let first_name = $('#first_name').val();
-        let last_name = $('#last_name').val();
 
-        $(".error").remove();
+        let errorMessages = {
+            input : "This input is require!",
+            select : "Select an option!",
+            checkbox : "Check this!",
+            checkboxes : "Check on!",
+            radio : "Please mark one option!",
+            email : "It is not a valid e-mail address!",
+            number : "This is not a number!"
+        };
 
-        if (first_name.length < 1) {
-            $('#first_name').after('<div class="error">This field is required!</div>');
-        }
-        if (last_name.length < 1) {
-            $('#last_name').after('<div class="error">This field is required!</div>');
-        }
+        $(".formError").remove();
+
+
+
+        $('.form__item.validate').each(function () {
+
+            let regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            function IsEmail(email) {
+                if(!regex.test(email)) {
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+            let regNumbers = /^[0-9]+$/;
+            function IsNumber(number) {
+                if(!regNumbers.test(number)) {
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+
+            let formField_checkboxItems = $(this).find('.formField .form__item__checkbox');
+            let input = $(this).find('input[type=text]');
+            let select = $(this).find('select');
+            let checkbox = $(this).find('input[type=checkbox]');
+            let radio = $(this).find('input[type=radio]');
+
+            $(this).removeClass('errorFound');
+
+            // Input
+            if (input.val() === ''){
+                input.after('<div class="formError">' + errorMessages.input + '</div>');
+                input.closest('.form__item').addClass('errorFound');
+            } else if (input.data('type') === 'email' && IsEmail(input.val())==false){
+                input.after('<div class="formError">' + errorMessages.email + '</div>');
+                input.closest('.form__item').addClass('errorFound');
+            } else if (input.data('type') === 'numbersOnly' && IsNumber(input.val())==false){
+                input.after('<div class="formError">' + errorMessages.number + '</div>');
+                input.closest('.form__item').addClass('errorFound');
+            }
+
+            // Select
+            if (select.val() === 'default') {
+                select.after('<div class="formError">' + errorMessages.select + '</div>');
+                select.closest('.form__item').addClass('errorFound');
+            }
+
+            // Checkbox
+            if (!checkbox.is(":checked")){
+                if (formField_checkboxItems.length > 1){
+                    checkbox.closest('.formField').append('<div class="formError">' + errorMessages.checkboxes + '</div>');
+                } else {
+                    checkbox.closest('.formField').append('<div class="formError">' + errorMessages.checkbox + '</div>');
+                }
+                checkbox.closest('.form__item').addClass('errorFound');
+            }
+
+            // Radio Button
+            if (!radio.is(":checked")){
+                radio.closest('.formField').append('<div class="formError">' + errorMessages.radio + '</div>');
+                radio.closest('.form__item').addClass('errorFound');
+            }
+
+        });
 
     });
 
