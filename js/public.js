@@ -154,23 +154,22 @@ $(document).ready(function(){
 
         $(".formError").remove();
 
-
-
         $('.form__item.validate').each(function () {
 
             let regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             function IsEmail(email) {
                 if(!regex.test(email)) {
                     return false;
-                }else{
+                } else {
                     return true;
                 }
             }
+
             let regNumbers = /^[0-9]+$/;
             function IsNumber(number) {
                 if(!regNumbers.test(number)) {
                     return false;
-                }else{
+                } else {
                     return true;
                 }
             }
@@ -187,10 +186,14 @@ $(document).ready(function(){
             if (input.val() === ''){
                 input.after('<div class="formError">' + errorMessages.input + '</div>');
                 input.closest('.form__item').addClass('errorFound');
-            } else if (input.data('type') === 'email' && IsEmail(input.val())==false){
+            }
+            // E-mail
+            else if (input.data('type') === 'email' && IsEmail(input.val())==false){
                 input.after('<div class="formError">' + errorMessages.email + '</div>');
                 input.closest('.form__item').addClass('errorFound');
-            } else if (input.data('type') === 'numbersOnly' && IsNumber(input.val())==false){
+            }
+            // Number
+            else if (input.data('type') === 'numbersOnly' && IsNumber(input.val())==false){
                 input.after('<div class="formError">' + errorMessages.number + '</div>');
                 input.closest('.form__item').addClass('errorFound');
             }
@@ -284,7 +287,7 @@ $(document).ready(function(){
         --- --- --- --- --- --- --- --- */
 
     // Floating Elements
-    /*$(window).scroll(function () {
+    $(window).scroll(function () {
 
         let scroll = $(window).scrollTop();
         let floatingElements_offset = $('.floatingElements').offset().top - ($(window).height() / 1.5);
@@ -298,10 +301,10 @@ $(document).ready(function(){
         }
 
     });
-    $(window).scroll();*/
+    $(window).scroll();
 
-    // Promo Scope
-    /*$(window).scroll(function () {
+    /*// Promo Scope
+    $(window).scroll(function () {
 
         let scroll = $(window).scrollTop();
         let promoScope = $('.promoScope').offset().top - $(window).height();
