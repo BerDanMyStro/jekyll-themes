@@ -202,50 +202,55 @@ $(document).ready(function(){
         --- --- --- --- --- --- --- --- */
 
     // Scrolling Sections
-    let section = $('.scrollingSections section');
-    let max_index = section.length;
 
-    section.each(function () {
+    if ( $( ".scrollingSections" ).length ) {
 
-        // Inverse z-index
-        $(this).children('.sectionContent').css({
-           'z-index': max_index--
+        let section = $('.scrollingSections section');
+        let max_index = section.length;
+
+        section.each(function () {
+
+            // Inverse z-index
+            $(this).children('.sectionContent').css({
+                'z-index': max_index--
+            });
+
         });
 
-    });
 
+        $(window).scroll(function () {
 
-    $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            let i;
 
-        let scroll = $(window).scrollTop();
-        let i;
+            for (i=0; i < section.length; i++){
 
-        for (i=0; i < section.length; i++){
+                let currentSection = section.eq(i);
+                let sectionOffset_top = currentSection.offset().top;
+                let sectionHeight = currentSection.height();
 
-            let currentSection = section.eq(i);
-            let sectionOffset_top = currentSection.offset().top;
-            let sectionHeight = currentSection.height();
+                if ( scroll >= sectionOffset_top ){
 
-            if ( scroll >= sectionOffset_top ){
+                    let elementScroll = scroll - sectionOffset_top;
+                    let opacity = elementScroll / sectionHeight + 0.15;
 
-                let elementScroll = scroll - sectionOffset_top;
-                let opacity = elementScroll / sectionHeight + 0.15;
+                    currentSection.next('section').children('.sectionContent').children('.sectionContent__inner').css({
+                        'opacity': opacity
+                    });
 
-                currentSection.next('section').children('.sectionContent').children('.sectionContent__inner').css({
-                    'opacity': opacity
-                });
+                }
+
+                if ( scroll >= sectionOffset_top && scroll < (sectionOffset_top + sectionHeight) ){
+                    section.eq(i).addClass('scrolling');
+                } else if ( scroll < sectionOffset_top && scroll < (sectionOffset_top + sectionHeight) ){
+                    section.eq(i).removeClass('scrolling');
+                }
 
             }
 
-            if ( scroll >= sectionOffset_top && scroll < (sectionOffset_top + sectionHeight) ){
-                section.eq(i).addClass('scrolling');
-            } else if ( scroll < sectionOffset_top && scroll < (sectionOffset_top + sectionHeight) ){
-                section.eq(i).removeClass('scrolling');
-            }
+        });
 
-        }
-
-    });
+    }
 
     $(window).scroll();
 
