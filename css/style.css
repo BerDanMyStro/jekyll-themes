@@ -47,7 +47,7 @@ a { outline: none; text-decoration: none; }
 .btn--openSub span:nth-child(2), .btn--openSub span:nth-child(3) { top: 17px; }
 .btn--openSub span:nth-child(4) { top: 24px; }
 
-h2, h3, h4, h5, h6 { margin-bottom: 1em; line-height: 1.2; }
+h2, h3, h4, h5, h6 { margin-bottom: 1em; line-height: 1.2; z-index: 2; }
 
 h3 { font-size: 1.75rem; }
 
