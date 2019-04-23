@@ -31,19 +31,30 @@ $(document).ready(function(){
 
     if ($('.slider').length) {
 
-        let sliderContent = $('.sliderContent');
-        let slide = $('.sliderContent .slide');
-        let sliderWidth = slide.length * 100 + '%';         // Slider width
+        // Buttons
+        const btnNext = $('#btn--nextSlide');               // Next Button
+        const btnPrev = $('#btn--prevSlide');               // Prev Button
+
+        // Elements
+        let sliderContent = $('.sliderContent');            // Slider
+        let slide = $('.sliderContent .slide');             // Slide
+
+        // Settings
+        const size = slide[0].clientWidth;                  // Slider width
         let counter = 1;                                    // #NO Slides
-        const size = slide[0].clientWidth;
+        let sliderWidth = slide.length * 100 + '%';         // Slides sum width
         let slideWidth = -size * counter + 'px';            // Slide width
+
+        // Animation & Style
+        function animationStyle(){
+            sliderContent.css('transition' , 'transform 0.4s ease-in-out');
+        }
+        function executeAnimation(){
+            sliderContent.css('transform', 'translateX('+ -size * counter + 'px');
+        }
 
         // Set Slider width
         sliderContent.width(sliderWidth);
-
-        // Buttons
-        const btnNext = $('#btn--nextSlide');
-        const btnPrev = $('#btn--prevSlide');
 
         // Set start slide
         sliderContent.css('transform', 'translateX('+ slideWidth +')');
@@ -51,31 +62,30 @@ $(document).ready(function(){
         // Next slide
         btnNext.on('click', function () {
             if (counter >= slide.length - 1) return;
-            sliderContent.css('transition' , 'transform 0.4s ease-in-out');
+            animationStyle();
             counter++;
-            sliderContent.css('transform', 'translateX('+ -size * counter + 'px');
+            executeAnimation();
         });
 
         // Prev slide
         btnPrev.on('click', function () {
             if (counter <= 0) return;
-            sliderContent.css('transition' , 'transform 0.4s ease-in-out');
+            animationStyle();
             counter--;
-            sliderContent.css('transform', 'translateX('+ -size * counter + 'px');
+            executeAnimation();
         });
 
+        // Sliding
         sliderContent.on('transitionend', function () {
            if (slide[counter].id === 'lastClone') {
-               // console.log('Here');
                sliderContent.css('transition' , 'none');
                counter = slide.length -2;
-               sliderContent.css('transform', 'translateX('+ -size * counter + 'px');
+               executeAnimation();
            }
            if (slide[counter].id === 'firstClone') {
-               // console.log('Here');
                sliderContent.css('transition' , 'none');
                counter = slide.length - counter;
-               sliderContent.css('transform', 'translateX('+ -size * counter + 'px');
+               executeAnimation();
            }
         });
 
