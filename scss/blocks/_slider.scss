@@ -1,0 +1,33 @@
+// >> Slider Style --- >
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    .sliderContent {
+        @include flex();
+        width: 700%;
+        li {
+            width: 100%;
+        }
+    }
+    %sliderButton {
+        position: absolute;
+        top: calc(50% - 12px);
+        width: 36px;
+        height: 36px;
+        fill: w(0.5);
+        box-shadow: 0 0 16px b(0.3);
+        cursor: pointer;
+        &:hover {
+            fill: w(0.9);
+        }
+    }
+    #btn--prevSlide {
+        @extend %sliderButton;
+        left: 16px;
+    }
+    #btn--nextSlide {
+        @extend %sliderButton;
+        right: 16px;
+    }
+}

@@ -484,4 +484,12 @@ nav h3.pageSubtitle:after { height: 1px; }
 
 canvas { position: absolute; top: 0; left: 0; }
 
+.slider { width: 100%; overflow: hidden; }
+.slider .sliderContent { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: stretch; width: 700%; }
+.slider .sliderContent li { width: 100%; }
+.slider #btn--prevSlide, .slider #btn--nextSlide { position: absolute; top: calc(50% - 12px); width: 36px; height: 36px; fill: rgba(255, 255, 255, 0.5); box-shadow: 0 0 16px rgba(0, 0, 0, 0.3); cursor: pointer; }
+.slider #btn--prevSlide:hover, .slider #btn--nextSlide:hover { fill: rgba(255, 255, 255, 0.9); }
+.slider #btn--prevSlide { left: 16px; }
+.slider #btn--nextSlide { right: 16px; }
+
 /*# sourceMappingURL=style.css.map */
