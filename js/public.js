@@ -25,69 +25,86 @@ function scrollTo(target, speed) {
 
 });*/
 
+// Clone Slides
+function cloneSlider_elements() {
+
+    let firstElement = $('li.slide:first');
+    let lastElement = $('li.slide:last');
+
+    lastElement.clone().insertBefore('li.slide:first').attr('id', 'lastClone');
+    firstElement.clone().insertAfter('li.slide:last').attr('id', 'firstClone');
+}
+
+// Slider function
+function Slider() {
+
+    // Buttons
+    const btnNext = $('#btn--nextSlide');               // Next Button
+    const btnPrev = $('#btn--prevSlide');               // Prev Button
+
+    // Elements
+    let sliderContent = $('.sliderContent');            // Slider
+    let slide = $('.sliderContent .slide');             // Slide
+
+    // Settings
+    const size = slide[0].clientWidth;                  // Slider width
+    let counter = 1;                                    // #NO Slides
+    let sliderWidth = slide.length * 100 + '%';         // Slides sum width
+    let slideWidth = -size * counter + 'px';            // Slide width
+
+    // Animation & Style
+    function animationStyle(){
+        sliderContent.css('transition' , 'transform 0.4s ease-in-out');
+    }
+    function executeAnimation(){
+        sliderContent.css('transform', 'translateX('+ -size * counter + 'px');
+    }
+
+    // Set Slider width
+    sliderContent.width(sliderWidth);
+
+    // Set start slide
+    sliderContent.css('transform', 'translateX('+ slideWidth +')');
+
+    // Next slide
+    btnNext.on('click', function () {
+        if (counter >= slide.length - 1) return;
+        animationStyle();
+        counter++;
+        executeAnimation();
+    });
+
+    // Prev slide
+    btnPrev.on('click', function () {
+        if (counter <= 0) return;
+        animationStyle();
+        counter--;
+        executeAnimation();
+    });
+
+    // Sliding animation
+    sliderContent.on('transitionend', function () {
+        if (slide[counter].id === 'lastClone') {
+            sliderContent.css('transition' , 'none');
+            counter = slide.length -2;
+            executeAnimation();
+        }
+        if (slide[counter].id === 'firstClone') {
+            sliderContent.css('transition' , 'none');
+            counter = slide.length - counter;
+            executeAnimation();
+        }
+    });
+
+}
+
 $(document).ready(function(){
 
     // Slider
-
     if ($('.slider').length) {
 
-        // Buttons
-        const btnNext = $('#btn--nextSlide');               // Next Button
-        const btnPrev = $('#btn--prevSlide');               // Prev Button
-
-        // Elements
-        let sliderContent = $('.sliderContent');            // Slider
-        let slide = $('.sliderContent .slide');             // Slide
-
-        // Settings
-        const size = slide[0].clientWidth;                  // Slider width
-        let counter = 1;                                    // #NO Slides
-        let sliderWidth = slide.length * 100 + '%';         // Slides sum width
-        let slideWidth = -size * counter + 'px';            // Slide width
-
-        // Animation & Style
-        function animationStyle(){
-            sliderContent.css('transition' , 'transform 0.4s ease-in-out');
-        }
-        function executeAnimation(){
-            sliderContent.css('transform', 'translateX('+ -size * counter + 'px');
-        }
-
-        // Set Slider width
-        sliderContent.width(sliderWidth);
-
-        // Set start slide
-        sliderContent.css('transform', 'translateX('+ slideWidth +')');
-
-        // Next slide
-        btnNext.on('click', function () {
-            if (counter >= slide.length - 1) return;
-            animationStyle();
-            counter++;
-            executeAnimation();
-        });
-
-        // Prev slide
-        btnPrev.on('click', function () {
-            if (counter <= 0) return;
-            animationStyle();
-            counter--;
-            executeAnimation();
-        });
-
-        // Sliding
-        sliderContent.on('transitionend', function () {
-           if (slide[counter].id === 'lastClone') {
-               sliderContent.css('transition' , 'none');
-               counter = slide.length -2;
-               executeAnimation();
-           }
-           if (slide[counter].id === 'firstClone') {
-               sliderContent.css('transition' , 'none');
-               counter = slide.length - counter;
-               executeAnimation();
-           }
-        });
+        cloneSlider_elements();
+        Slider();
 
     }
 
@@ -413,4 +430,9 @@ $(document).ready(function(){
         );
     }
 
+});
+
+$(window).resize(function() {
+    // Slider
+    Slider();
 });
