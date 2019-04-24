@@ -43,11 +43,12 @@ function Slider() {
     const btnPrev = $('#btn--prevSlide');               // Prev Button
 
     // Elements
+    let slider = $('.slider');
     let sliderContent = $('.sliderContent');            // Slider
     let slide = $('.sliderContent .slide');             // Slide
 
     // Settings
-    const size = slide[0].clientWidth;                  // Slider width
+    const size = slider[0].clientWidth;           // Slider width
     let counter = 1;                                    // #NO Slides
     let sliderWidth = slide.length * 100 + '%';         // Slides sum width
     let slideWidth = -size * counter + 'px';            // Slide width
@@ -329,22 +330,6 @@ $(document).ready(function(){
 
     });
 
-    // Flipping Cards
-    let flipped=false;
-
-    $('.flip-container').on('click', function(){
-        if(!flipped){
-            $(this).children('.card').children('.back').css('transform','rotateY(0deg)');
-            $(this).children('.card').children('.front').css('transform','rotateY(180deg)');
-            flipped=true;
-        }
-        else{
-            $(this).children('.card').children('.back').css('transform','rotateY(180deg)');
-            $(this).children('.card').children('.front').css('transform','rotateY(0deg)');
-            flipped=false;
-        }
-    });
-
     // Lorem Text Generator
     $('.sample-1').looreem({'wC':50, 'isHTML':true, 'langSel':arrayHU});
     // $('#sample-2').looreem({'genType':'p','pC':2,'sPP':5,'wPPS':25,'isHTML':true,'langSel':arrayHU});
@@ -409,28 +394,40 @@ $(document).ready(function(){
     // jQuery Column Collapse Table
 
     let miniTable = $('.responsiveTable--mini');
-    let theadTr = $('.responsiveTable--big--col3 thead').find('tr');
-    let tbodyTr = $('.responsiveTable--big--col3 tbody').find('tr');
-    let noColumn = theadTr[0].cells.length;
-    let columnTitle = theadTr.find('th');
 
-    for ( let i=0; i < noColumn; i++ ) {
+    if (miniTable.length) {
 
-        let columnContent = tbodyTr.find('td:nth-child(3n+' + (i + 1) + ')');
-        let no_columnContent = columnContent.length;
-        let ulContent = [];
+        let theadTr = $('.responsiveTable--big--col3 thead').find('tr');
+        let tbodyTr = $('.responsiveTable--big--col3 tbody').find('tr');
+        let noColumn = theadTr[0].cells.length;
+        let columnTitle = theadTr.find('th');
 
-        for (let j = 0; j < no_columnContent; j++) {
-            ulContent.push('<li>' + columnContent[j].innerHTML + '</li>');
+        for ( let i=0; i < noColumn; i++ ) {
+
+            let columnContent = tbodyTr.find('td:nth-child(3n+' + (i + 1) + ')');
+            let no_columnContent = columnContent.length;
+            let ulContent = [];
+
+            for (let j = 0; j < no_columnContent; j++) {
+                ulContent.push('<li>' + columnContent[j].innerHTML + '</li>');
+            }
+
+            miniTable.append(
+                '<div class="columnTitle">' + columnTitle[i].innerText + '</div>' +
+                '<ul>' + ulContent.join('') + '</ul>'
+            );
         }
-
-        miniTable.append(
-            '<div class="columnTitle">' + columnTitle[i].innerText + '</div>' +
-            '<ul>' + ulContent.join('') + '</ul>'
-        );
     }
 
 });
+
+$(window).on('load', function () {
+   $('.slider').css({
+           'transition' : 'opacity 0.25s ease-in-out',
+           'opacity' : '1'
+   });
+});
+
 
 $(window).resize(function() {
     // Slider
