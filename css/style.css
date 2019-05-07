@@ -514,4 +514,10 @@ canvas { position: absolute; top: 0; left: 0; }
 .faqAnswer p { margin-bottom: 0.75em; }
 .faqAnswer p:last-of-type { margin-bottom: 0; }
 
+.faqGrids { padding: 32px; background: white; }
+.faqGrids .faqWrapper { padding: 0; }
+.faqGrids .faqWrapper .faq__item { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: stretch; border-bottom: none; position: static; }
+.faqGrids .faqWrapper .faq__item .faqQuestion { display: block; width: 49%; }
+.faqGrids .faqWrapper .faq__item .faqAnswer { display: none; position: absolute; top: 0; right: 0; width: 49%; }
+
 /*# sourceMappingURL=style.css.map */

@@ -426,7 +426,23 @@ $(document).ready(function(){
     if (faq.length) {
 
         let faqQuestion = $('.faq__item .faqQuestion');
-        let faqAnswer = $('.faq__item .faqAnswer')
+        let faqAnswer = $('.faq__item .faqAnswer');
+
+        faqQuestion.click(function() {
+            $(this).toggleClass('opened');
+            faqQuestion.not(this).removeClass('opened');
+            faqAnswer.not($(this).next('.faq__item .faqAnswer')).stop().slideUp('fast');
+            $(this).next('.faq__item .faqAnswer').stop().slideToggle('fast');
+        });
+
+    }
+
+    let faqGrids = $('.faqGrids');
+
+    if (faqGrids.length) {
+
+        let faqQuestion = $('.faq__item .faqQuestion');
+        let faqAnswer = $('.faq__item .faqAnswer');
 
         faqQuestion.click(function() {
             $(this).toggleClass('opened');
