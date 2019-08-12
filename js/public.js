@@ -101,6 +101,20 @@ function Slider() {
 
 $(document).ready(function(){
 
+    // Set pageWrapper min-height
+
+    let bodyHeight = $('body').height();
+    let headerHeight = $('header').outerHeight();
+    let contentHeight = $('.pageWrapper').outerHeight();
+    let footerHeight = $('footer').outerHeight();
+
+    let pageHeight = (headerHeight + contentHeight + footerHeight);
+    let setHeight = (headerHeight + footerHeight);
+
+    if (bodyHeight > pageHeight){
+        $('.pageWrapper').css('min-height', 'calc(100vh - '+ setHeight +'px)');
+    }
+
     // Slider
     if ($('.slider').length) {
 
@@ -547,33 +561,16 @@ $(document).ready(function(){
     $('#counter2').jQuerySimpleCounter({end: 54786,duration: 3000});
     $('#counter3').jQuerySimpleCounter({end: 547860,duration: 3000});
 
-    /*function countUpTo(elementID, startValue, endValue, incrementValue, timeoutValue) {
-        startValue = (typeof startValue !== 'undefined' ? startValue : 0);
-
-        let e = document.getElementById(elementID),
-            currentValue = startValue,
-            finalValue = endValue,
-            increment = incrementValue,
-            timeout =  timeoutValue;
-
-        e.innerHTML = currentValue;
-
-        var counter = setInterval(function() {
-            if (currentValue >= finalValue) {
-                clearInterval(counter);
-                e.innerHTML = addSeparator(finalValue);
-            } else {
-                currentValue += increment;
-                e.innerHTML = addSeparator(currentValue);
-            }
-        }, timeout);
-    }
-
-    countUpTo('counter1', 0, 5000, 7,1);
-    countUpTo('counter2', 0, 10, 1, 100);*/
 
 
 });
+
+
+
+
+
+
+
 
 // $(window).on('load', function () {
 //    $('.slider').css({
