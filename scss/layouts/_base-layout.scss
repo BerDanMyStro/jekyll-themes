@@ -2,12 +2,14 @@
 @import "./partial/header";
 @import "./partial/footer";
 //@import "./partial/cursor";
+@import "partial/scrollBar";
 
 body{
     @extend %stickyFooter;
     background: url("../images/skulls.png");
     font-family: #{$base-fontFamily};
     overflow-x: hidden;
+    height: 100vh;
 }
 .pageWrapper{
     @include flex(center, baseline);

@@ -1,0 +1,17 @@
+// >> Scrollbar Style --- >
+
+.simplebar-track.simplebar-vertical {
+    width: 12px;
+}
+.simplebar-track .simplebar-scrollbar {
+    width: 10px;
+    &.simplebar-visible:before {
+        width: 10px;
+        border-radius: 5px;
+        background: $flat-color_8;
+        opacity: 0.75;
+    }
+    &.simplebar-hover.simplebar-visible:before {
+        opacity: 1 !important;
+    }
+}
