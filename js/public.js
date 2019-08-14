@@ -114,6 +114,8 @@ $(document).ready(function(){
 
     }
 
+    new SimpleBar(document.getElementById('jumpHere'));
+
     // Set pageWrapper min-height
 
     let bodyHeight = $('body').height();
