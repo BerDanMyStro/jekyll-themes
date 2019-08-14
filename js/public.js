@@ -108,13 +108,13 @@ $(document).ready(function(){
 
         let scrollWrapper = $('#jumpHere.stickyWrapper');
 
-        // Add data attribute
-        scrollWrapper.attr('data-simplebar-auto-hide', 'false');
+        // Add class
         scrollWrapper.addClass('scrollPc');
 
     }
 
-    new SimpleBar(document.getElementById('jumpHere'));
+    new SimpleBar(document.getElementById('jumpHere'), { autoHide: false });
+
 
     // Set pageWrapper min-height
 
