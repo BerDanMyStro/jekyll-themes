@@ -25,6 +25,7 @@ function scrollTo(target, speed) {
 
 });*/
 
+
 // Clone Slides
 function cloneSlider_elements() {
 
@@ -100,6 +101,18 @@ function Slider() {
 }*/
 
 $(document).ready(function(){
+
+    // Check if PC
+
+    if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+        let scrollWrapper = $('#jumpHere.stickyWrapper');
+
+        // Add data attribute
+        scrollWrapper.attr('data-simplebar-auto-hide', 'false');
+        scrollWrapper.addClass('scrollPc');
+
+    }
 
     // Set pageWrapper min-height
 
