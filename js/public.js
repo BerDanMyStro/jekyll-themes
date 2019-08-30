@@ -572,15 +572,15 @@ $(document).ready(function(){
 
 
 
-// $(window).on('load', function () {
-//    $('.slider').css({
-//            'transition' : 'opacity 0.25s ease-in-out',
-//            'opacity' : '1'
-//    });
-// });
-//
-//
-// $(window).resize(function() {
-//     // Slider
-//     Slider();
-// });
+$(window).on('load', function () {
+   $('.slider').css({
+           'transition' : 'opacity 0.25s ease-in-out',
+           'opacity' : '1'
+   });
+});
+
+
+$(window).resize(function() {
+    // Slider
+    Slider();
+});

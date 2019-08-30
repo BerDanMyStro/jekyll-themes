@@ -89,13 +89,7 @@ header { display: -ms-flexbox; display: flex; justify-content: center; align-ite
 footer { width: 100%; background: #2c3e50; padding: 0; }
 @media only screen and (min-width: 1024px) { footer { padding: 24px 0; } }
 
-.simplebar-track.simplebar-vertical { width: 12px; }
-
-.simplebar-track .simplebar-scrollbar { width: 10px; }
-.simplebar-track .simplebar-scrollbar.simplebar-visible:before { width: 10px; border-radius: 5px; background: #34495e; opacity: 0.75; }
-.simplebar-track .simplebar-scrollbar.simplebar-hover.simplebar-visible:before { opacity: 1 !important; }
-
-body { background: url("../images/skulls.png"); font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; }
+body { background: url("../images/skulls.png"); font-family: 'Poppins', sans-serif; overflow-x: hidden; }
 
 .pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: baseline; position: static; width: 100%; padding: 40px 0 60px 0; }
 
