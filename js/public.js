@@ -36,7 +36,7 @@ function cloneSlider_elements() {
     firstElement.clone().insertAfter('li.slide:last').attr('id', 'firstClone');
 }
 
-/*// Slider function
+// Slider function
 function Slider() {
 
     // Buttons
@@ -98,7 +98,7 @@ function Slider() {
         }
     });
 
-}*/
+}
 
 $(document).ready(function(){
 
@@ -132,70 +132,6 @@ $(document).ready(function(){
 
     // Slider
     if ($('.slider').length) {
-
-        // Slider function
-        function Slider() {
-
-            // Buttons
-            const btnNext = $('#btn--nextSlide');               // Next Button
-            const btnPrev = $('#btn--prevSlide');               // Prev Button
-
-            // Elements
-            let slider = $('.slider');
-            let sliderContent = $('.sliderContent');            // Slider
-            let slide = $('.sliderContent .slide');             // Slide
-
-            // Settings
-            const size = slider[0].clientWidth;           // Slider width
-            let counter = 1;                                    // #NO Slides
-            let sliderWidth = slide.length * 100 + '%';         // Slides sum width
-            let slideWidth = -size * counter + 'px';            // Slide width
-
-            // Animation & Style
-            function animationStyle(){
-                sliderContent.css('transition' , 'transform 0.4s ease-in-out');
-            }
-            function executeAnimation(){
-                sliderContent.css('transform', 'translateX('+ -size * counter + 'px');
-            }
-
-            // Set Slider width
-            sliderContent.width(sliderWidth);
-
-            // Set start slide
-            sliderContent.css('transform', 'translateX('+ slideWidth +')');
-
-            // Next slide
-            btnNext.on('click', function () {
-                if (counter >= slide.length - 1) return;
-                animationStyle();
-                counter++;
-                executeAnimation();
-            });
-
-            // Prev slide
-            btnPrev.on('click', function () {
-                if (counter <= 0) return;
-                animationStyle();
-                counter--;
-                executeAnimation();
-            });
-
-            // Sliding animation
-            sliderContent.on('transitionend', function () {
-                if (slide[counter].id === 'lastClone') {
-                    sliderContent.css('transition' , 'none');
-                    counter = slide.length -2;
-                    executeAnimation();
-                }
-                if (slide[counter].id === 'firstClone') {
-                    sliderContent.css('transition' , 'none');
-                    counter = slide.length - counter;
-                    executeAnimation();
-                }
-            });
-
-        }
 
         cloneSlider_elements();
         Slider();
@@ -538,50 +474,13 @@ $(document).ready(function(){
         let faqAnswer = $('.faq__item .faqAnswer');
 
         faqQuestion.click(function() {
+            $(this).toggleClass('opened');
+            faqQuestion.not(this).removeClass('opened');
             faqAnswer.not($(this).next('.faq__item .faqAnswer')).stop().slideUp('fast');
             $(this).next('.faq__item .faqAnswer').stop().slideToggle('fast');
         });
 
     }
-
-    // Counter
-
-    function addSeparator(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    }
-
-    $.fn.jQuerySimpleCounter = function( options ) {
-        var settings = $.extend({
-            start:  0,
-            end:    100,
-            easing: 'swing',
-            duration: 20,
-            complete: ''
-        }, options );
-
-        var thisElement = $(this);
-
-        $({count: settings.start}).animate({count: settings.end}, {
-            duration: settings.duration,
-            easing: settings.easing,
-            step: function() {
-                var mathCount = Math.ceil(this.count);
-                thisElement.text(addSeparator(mathCount));
-            },
-            complete: settings.complete
-        });
-    };
-
-    $('#counter1').jQuerySimpleCounter({end: 12,duration: 3000});
-    $('#counter2').jQuerySimpleCounter({end: 54786,duration: 3000});
-    $('#counter3').jQuerySimpleCounter({end: 547860,duration: 3000});
-
-
-
-});
-
-
-
 
 
 
