@@ -1,0 +1,32 @@
+// >> Gallery Style --- >
+
+#scrollingGallery {
+    margin: 3.5em 0;
+    .imagesWrapper {
+        @include flex();
+        .gallery__item {
+            display: block;
+            float: left;
+            padding: 0 24px;
+            &:first-child {
+                @include flex(flex-start, center);
+                flex-wrap: wrap;
+                min-width: 33%;
+            }
+            .galleryName {
+                font-size: rem(24px);
+                font-weight: 600;
+                line-height: 1.2;
+            }
+            .galleryDesc {
+                margin: 1em 0 0;
+                font-size: rem(14px);
+                line-height: 1.2;
+            }
+            img {
+                width: auto;
+                height: calc(100vh / 2);
+            }
+        }
+    }
+}

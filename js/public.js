@@ -573,7 +573,34 @@ $(document).ready(function(){
     $('#counter2').jQuerySimpleCounter({end: 54786,duration: 3000});
     $('#counter3').jQuerySimpleCounter({end: 547860,duration: 3000});
 
+    let scrollingGallery = $('#scrollingGallery');
+    if (scrollingGallery.length) {
 
+        let sdegree = 0;
+
+        scrollingGallery.on('DOMMouseScroll mousewheel', function (e) {
+            if(e.originalEvent.detail < 0 || e.originalEvent.wheelDelta < 0) { //alternative options for
+                // wheelData:
+                // wheelDeltaX & wheelDeltaY
+                //scroll down
+                console.log('Down');
+                sdegree -- ;
+                sdegree = sdegree - 100 ;
+                var srotate = "translateX(" + sdegree + "px)";
+                $(".imagesWrapper").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+            } else {
+                //scroll up
+                console.log('Up');
+                sdegree ++ ;
+                sdegree = sdegree + 100 ;
+                var srotate = "translateX(" + sdegree + "px)";
+                $(".imagesWrapper").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+            }
+            //prevent page fom scrolling
+            return false;
+        });
+
+    }
 
 });
 
