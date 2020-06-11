@@ -520,7 +520,8 @@ canvas { position: absolute; top: 0; left: 0; }
 .faqGrids .faqWrapper .faq__item .faqQuestion { display: block; width: 49%; }
 .faqGrids .faqWrapper .faq__item .faqAnswer { display: none; position: absolute; top: 0; right: 0; width: 49%; }
 
-#scrollingGallery { margin: 3.5em 0; }
+#scrollingGallery { margin: 3.5em 0; overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none; cursor: url("../images/scroll-200.png"), auto; }
+#scrollingGallery::-webkit-scrollbar { display: none; }
 #scrollingGallery .imagesWrapper { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: stretch; }
 #scrollingGallery .imagesWrapper .gallery__item { display: block; float: left; padding: 0 24px; }
 #scrollingGallery .imagesWrapper .gallery__item:first-child { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; min-width: 33%; }
