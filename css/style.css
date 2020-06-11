@@ -520,13 +520,15 @@ canvas { position: absolute; top: 0; left: 0; }
 .faqGrids .faqWrapper .faq__item .faqQuestion { display: block; width: 49%; }
 .faqGrids .faqWrapper .faq__item .faqAnswer { display: none; position: absolute; top: 0; right: 0; width: 49%; }
 
-#scrollingGallery { margin: 3.5em 0; overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none; cursor: url("../images/scroll-200.png"), auto; }
+#scrollingGallery { margin: 3.5em 0; overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none; }
 #scrollingGallery::-webkit-scrollbar { display: none; }
 #scrollingGallery .imagesWrapper { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: stretch; }
 #scrollingGallery .imagesWrapper .gallery__item { display: block; float: left; padding: 0 24px; }
 #scrollingGallery .imagesWrapper .gallery__item:first-child { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; min-width: 33%; }
 #scrollingGallery .imagesWrapper .gallery__item .galleryName { font-size: 1.5rem; font-weight: 600; line-height: 1.2; }
 #scrollingGallery .imagesWrapper .gallery__item .galleryDesc { margin: 1em 0 0; font-size: 0.875rem; line-height: 1.2; }
+#scrollingGallery .imagesWrapper .gallery__item .scrollIcon { width: 48px; margin: 2em auto 0; padding: 8px; background: rgba(0, 0, 0, 0.25); border-radius: 3px; }
+#scrollingGallery .imagesWrapper .gallery__item .scrollIcon img { width: 100%; height: auto; }
 #scrollingGallery .imagesWrapper .gallery__item img { width: auto; height: calc(100vh / 2); }
 
 /*# sourceMappingURL=style.css.map */
